@@ -364,7 +364,7 @@ A: Check usage at https://platform.gaude.ai/account/usage
 
 ## Developer
 
-**Ricardo Riffo G.**
+**Ricardo Riffo Q.**
 Arquitecto Urbanista | Magíster en Inteligencia Artificial | Experto en Evaluaciones Energéticas y Medioambiente
 
 Desarrollador de productos de IA para Ingeniería, Arquitectura y Salud.
@@ -376,7 +376,7 @@ Desarrollador de productos de IA para Ingeniería, Arquitectura y Salud.
 
 ## License
 
-MIT © 2026 Ricardo Riffo G. — GAUD-E Architect AI
+MIT © 2026 Ricardo Riffo Q. — GAUD-E Architect AI
 
 See [LICENSE](./LICENSE) file for details.
 
@@ -398,7 +398,7 @@ See [LICENSE](./LICENSE) file for details.
 
 ---
 
-Developed by **Ricardo Riffo G.** — Arquitecto Urbanista, Magíster en IA
+Developed by **Ricardo Riffo Q.** — Arquitecto Urbanista, Magíster en IA
 
 Made with ❤️ by GAUD-E Architect AI
 
