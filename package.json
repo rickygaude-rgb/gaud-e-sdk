@@ -1,0 +1,85 @@
+{
+  "name": "@gaude/sdk",
+  "version": "1.0.0",
+  "description": "GAUD-E Developer SDK for BIM generation via GAUD-E Platform API. Integrate AI-powered architectural and building information modeling into your applications.",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "public",
+    "docs"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.jsx",
+    "type-check": "tsc --noEmit",
+    "test": "vitest",
+    "docs": "typedoc"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^r164",
+    "@react-three/fiber": "^9.0.0",
+    "@react-three/drei": "^9.0.0",
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.408.0",
+    "@react-google-maps/api": "^2.20.0",
+    "react-dropzone": "^14.3.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^r164",
+    "@types/node": "^20.0.0",
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "vitest": "^1.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.0",
+    "typescript": "^5.0.0",
+    "typedoc": "^0.25.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "keywords": [
+    "gaud-e",
+    "bim",
+    "architecture",
+    "3d-modeling",
+    "building-information-modeling",
+    "ai-generation",
+    "three.js",
+    "ifc",
+    "revit",
+    "archicad",
+    "parametric-design"
+  ],
+  "author": "GAUD-E Architect AI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaude-ai/gaud-e-sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/gaude-ai/gaud-e-sdk/issues"
+  },
+  "homepage": "https://github.com/gaude-ai/gaud-e-sdk#readme"
+}
