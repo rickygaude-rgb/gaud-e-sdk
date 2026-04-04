@@ -362,9 +362,21 @@ A: Verify Google Maps API key is correct and Maps API is enabled.
 **Q: Out of credits**
 A: Check usage at https://platform.gaude.ai/account/usage
 
+## Developer
+
+**Ricardo Riffo G.**
+Arquitecto Urbanista | Magíster en Inteligencia Artificial | Experto en Evaluaciones Energéticas y Medioambiente
+
+Desarrollador de productos de IA para Ingeniería, Arquitectura y Salud.
+
+- 🏛️ **Especialidades:** Diseño Arquitectónico Paramétrico, BIM, Urbanismo, Smart Cities
+- 🤖 **IA Aplicada:** Modelos multiagente, generación 3D desde lenguaje natural, Computer Vision
+- 🌱 **Sustentabilidad:** Certificaciones LEED, Passivhaus, evaluación de impacto ambiental
+- 🏥 **Salud:** Soluciones de IA para infraestructura hospitalaria y bienestar
+
 ## License
 
-MIT © 2026 GAUD-E Architect AI
+MIT © 2026 Ricardo Riffo G. — GAUD-E Architect AI
 
 See [LICENSE](./LICENSE) file for details.
 
@@ -385,6 +397,8 @@ See [LICENSE](./LICENSE) file for details.
 - [glTF Specification](https://www.khronos.org/gltf/)
 
 ---
+
+Developed by **Ricardo Riffo G.** — Arquitecto Urbanista, Magíster en IA
 
 Made with ❤️ by GAUD-E Architect AI
 

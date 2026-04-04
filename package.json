@@ -72,7 +72,11 @@
     "archicad",
     "parametric-design"
   ],
-  "author": "GAUD-E Architect AI",
+  "author": {
+    "name": "Ricardo Riffo G.",
+    "email": "rickygaude@gmail.com",
+    "url": "https://gaud-e-architect-ai.vercel.app"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
