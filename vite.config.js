@@ -1,10 +1,12 @@
 /**
  * Vite Configuration for GAUD-E SDK
- * Optimized for React 19, Three.js, and GAUD-E API integration
+ * Configured as LIBRARY BUILD for npm publishing
+ * Supports CJS + ESM dual output
  */
 
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
@@ -20,23 +22,41 @@ export default defineConfig({
   },
 
   build: {
-    outDir: 'dist',
-    sourcemap: false,
-    minify: 'terser',
+    lib: {
+      entry: resolve(__dirname, 'src/index.js'),
+      name: 'GaudeSDK',
+      formats: ['es', 'cjs'],
+      fileName: (format) => \`index.\${format === 'es' ? 'es' : 'cjs'}.js\`,
+    },
     rollupOptions: {
+      // Externalize peer dependencies — NOT bundled into the SDK
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        'three',
+        '@react-three/fiber',
+        '@react-three/drei',
+      ],
       output: {
-        manualChunks: {
-          'three': ['three'],
-          'react-three': ['@react-three/fiber', '@react-three/drei'],
-          'vendors': ['react', 'react-dom', 'framer-motion'],
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsxRuntime',
+          three: 'THREE',
+          '@react-three/fiber': 'ReactThreeFiber',
+          '@react-three/drei': 'Drei',
         },
       },
     },
+    sourcemap: true,
+    minify: 'terser',
+    outDir: 'dist',
   },
 
   resolve: {
     alias: {
-      '@': '/src',
+      '@': resolve(__dirname, 'src'),
     },
   },
 
@@ -53,7 +73,6 @@ export default defineConfig({
   },
 
   define: {
-    // Make environment variables available in code
     'import.meta.env.VITE_GAUD_E_API_URL': JSON.stringify(
       process.env.VITE_GAUD_E_API_URL || 'https://api.gaude.ai/v1'
     ),
