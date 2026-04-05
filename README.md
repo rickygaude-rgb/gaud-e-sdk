@@ -390,8 +390,8 @@ See [LICENSE](./LICENSE) file for details.
 
 ## Related Resources
 
-- [GAUD-E Platform](https://platform.gaude.ai)
-- [GAUD-E Research Paper](https://arxiv.org/abs/2404.xxxxx)
+- [GAUD-E Platform](https://gaud-e-architect-ai.vercel.app/)
+- [GAUD-E Research Paper](./paper/GAUD-E_Scientific_Paper_2026.pdf)
 - [Building Smart IFC Standard](https://www.buildingsmart.org/)
 - [Three.js Documentation](https://threejs.org/)
 - [glTF Specification](https://www.khronos.org/gltf/)
