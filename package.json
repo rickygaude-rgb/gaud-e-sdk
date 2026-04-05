@@ -30,238 +30,38 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.20.0",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.408.0",
-    "@react-google-maps/api": "^2.20.0",
     "react-dropzone": "^14.3.0"
   },
   "devDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "three": "^0.164.0",
-    "@react-three/fiber": "^9.0.0",
     "@react-three/drei": "^9.0.0",
+    "@react-three/fiber": "^9.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "^20.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@types/three": "^0.164.0",
-    "@types/node": "^20.0.0",
-    "vite": "^5.0.0",
     "@vitejs/plugin-react": "^4.0.0",
-    "vitest": "^1.0.0",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/jest-dom": "^6.0.0",
     "eslint": "^8.0.0",
     "eslint-config-react-app": "^7.0.0",
-    "typescript": "^5.0.0",
-    "typedoc": "^0.25.0",
-    "tailwindcss": "^4.0.0"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0",
-    "three": ">=0.150.0",
-    "@react-three/fiber": "^8.0.0 || ^9.0.0",
-    "@react-three/drei": "^9.0.0"
-  },
-  "peerDependenciesMeta": {
-    "three": {
-      "optional": false
-    },
-    "@react-three/fiber": {
-      "optional": false
-    },
-    "@react-three/drei": {
-      "optional": false
-    }
-  },
-  "keywords": [
-    "gaud-e",
-    "bim",
-    "architecture",
-    "3d-modeling",
-    "building-information-modeling",
-    "ai-generation",
-    "three.js",
-    "ifc",
-    "revit",
-    "archicad",
-    "parametric-design"
-  ],
-  "author": "GAUD-E Architect AI",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rickygaude-rgb/gaud-e-sdk.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rickygaude-rgb/gaud-e-sdk/issues"
-  },
-  "homepage": "https://github.com/rickygaude-rgb/gaud-e-sdk#readme"
-}
-{
-  "name": "gaud-e-sdk",
-  "version": "1.0.0",
-  "description": "GAUD-E Developer SDK for BIM generation via GAUD-E Platform API. Integrate AI-powered architectural and building information modeling into your applications.",
-  "type": "module",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "files": [
-    "dist",
-    "docs",
-    "README.md",
-    "LICENSE"
-  ],
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint src --ext .js,.jsx",
-    "type-check": "tsc --noEmit",
-    "test": "vitest",
-    "docs": "typedoc",
-    "prepublishOnly": "npm run build"
-  },
-  "dependencies": {
-    "framer-motion": "^11.0.0",
-    "lucide-react": "^0.408.0",
-    "@react-google-maps/api": "^2.20.0",
-    "react-dropzone": "^14.3.0"
-  },
-  "devDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
     "three": "^0.164.0",
-    "@react-three/fiber": "^9.0.0",
-    "@react-three/drei": "^9.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@types/three": "^0.164.0",
-    "@types/node": "^20.0.0",
-    "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^4.0.0",
-    "vitest": "^1.0.0",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/jest-dom": "^6.0.0",
-    "eslint": "^8.0.0",
-    "eslint-config-react-app": "^7.0.0",
-    "typescript": "^5.0.0",
     "typedoc": "^0.25.0",
-    "tailwindcss": "^4.0.0"
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0",
-    "three": ">=0.150.0",
-    "@react-three/fiber": "^8.0.0 || ^9.0.0",
-    "@react-three/drei": "^9.0.0"
-  },
-  "peerDependenciesMeta": {
-    "three": {
-      "optional": false
-    },
-    "@react-three/fiber": {
-      "optional": false
-    },
-    "@react-three/drei": {
-      "optional": false
-    }
-  },
-  "keywords": [
-    "gaud-e",
-    "bim",
-    "architecture",
-    "3d-modeling",
-    "building-information-modeling",
-    "ai-generation",
-    "three.js",
-    "ifc",
-    "revit",
-    "archicad",
-    "parametric-design"
-  ],
-  "author": "GAUD-E Architect AI",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rickygaude-rgb/gaud-e-sdk.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rickygaude-rgb/gaud-e-sdk/issues"
-  },
-  "homepage": "https://github.com/rickygaude-rgb/gaud-e-sdk#readme"
-}
-{
-  "name": "@gaude/sdk",
-  "version": "1.0.0",
-  "description": "GAUD-E Developer SDK for BIM generation via GAUD-E Platform API. Integrate AI-powered architectural and building information modeling into your applications.",
-  "type": "module",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "files": [
-    "dist",
-    "docs",
-    "README.md",
-    "LICENSE"
-  ],
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint src --ext .js,.jsx",
-    "type-check": "tsc --noEmit",
-    "test": "vitest",
-    "docs": "typedoc",
-    "prepublishOnly": "npm run build"
-  },
-  "dependencies": {
-    "framer-motion": "^11.0.0",
-    "lucide-react": "^0.408.0",
-    "@react-google-maps/api": "^2.20.0",
-    "react-dropzone": "^14.3.0"
-  },
-  "devDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "three": "^0.164.0",
-    "@react-three/fiber": "^9.0.0",
     "@react-three/drei": "^9.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@types/three": "^0.164.0",
-    "@types/node": "^20.0.0",
-    "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^4.0.0",
-    "vitest": "^1.0.0",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/jest-dom": "^6.0.0",
-    "eslint": "^8.0.0",
-    "eslint-config-react-app": "^7.0.0",
-    "typescript": "^5.0.0",
-    "typedoc": "^0.25.0",
-    "tailwindcss": "^4.0.0"
-  },
-  "peerDependencies": {
+    "@react-three/fiber": "^8.0.0 || ^9.0.0",
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0",
-    "three": ">=0.150.0",
-    "@react-three/fiber": "^8.0.0 || ^9.0.0",
-    "@react-three/drei": "^9.0.0"
+    "three": ">=0.150.0"
   },
   "peerDependenciesMeta": {
     "three": {
