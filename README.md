@@ -1,6 +1,6 @@
 # GAUD-E Developer SDK
 
-[![NPM Version](https://img.shields.io/npm/v/gaud-e-sdk)](https://www.npmjs.com/package/gaud-e-sdk)
+[![Version](https://img.shields.io/badge/npm-v1.0.0-blue)](https://github.com/rickygaude-rgb/gaud-e-sdk/releases/tag/v1.0.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/rickygaude-rgb/gaud-e-sdk/actions)
 [![Code Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/rickygaude-rgb/gaud-e-sdk)
@@ -9,32 +9,32 @@
 
 ```
 GAUD-E Platform API
-├── 4-Agent Pipeline
-│   ├── ✨ Enhancer (prompt optimization)
-│   ├── 🏗️  Architect (design generation)
-│   ├── 💻 Programmer (BIM geometry)
-│   └── ✓  Reviewer (validation)
-└── JSON BIM Output
-    ├── Structural elements
-    ├── Architectural features
-    ├── MEP systems
-    └── Landscape/site
+âââ 4-Agent Pipeline
+â   âââ â¨ Enhancer (prompt optimization)
+â   âââ ðï¸  Architect (design generation)
+â   âââ ð» Programmer (BIM geometry)
+â   âââ â  Reviewer (validation)
+âââ JSON BIM Output
+    âââ Structural elements
+    âââ Architectural features
+    âââ MEP systems
+    âââ Landscape/site
 ```
 
-**All processing happens on GAUD-E's secure cloud platform.** The SDK is a lightweight wrapper that routes requests through `api.gaude.ai`. No proprietary generation code is exposed—developers get a clean, secure API.
+**All processing happens on GAUD-E's secure cloud platform.** The SDK is a lightweight wrapper that routes requests through `api.gaude.ai`. No proprietary generation code is exposedâdevelopers get a clean, secure API.
 
 ## Features
 
-- 🎯 **Natural Language BIM Generation** - Describe buildings in plain English
-- 🎨 **Multiple Design Styles** - Minimalist, Bioclimatic, Parametric, Neoclassic, Industrial, and more
-- 🌍 **Terrain Selection** - Draw polygons on Google Maps to set your project location
-- 📊 **Real-time Progress** - Monitor 4-agent pipeline: Enhancer → Architect → Programmer → Reviewer
-- 🔴 **3D Visualization** - Interactive Three.js viewer with multiple render modes (realistic, wireframe, xray)
-- 📤 **Multi-format Export** - IFC (Revit/ArchiCAD compatible), glTF/GLB, and more
-- 🔗 **Software Integration** - Connect to Revit, ArchiCAD, Rhino, SketchUp via MCP
-- ⚡ **React Hooks** - `useGaude`, `useBIMViewer` for seamless state management
-- 🛡️ **Secure by Design** - API keys never exposed in client code, rate limiting, error handling
-- 📦 **TypeScript Ready** - Full type definitions included
+- ð¯ **Natural Language BIM Generation** - Describe buildings in plain English
+- ð¨ **Multiple Design Styles** - Minimalist, Bioclimatic, Parametric, Neoclassic, Industrial, and more
+- ð **Terrain Selection** - Draw polygons on Google Maps to set your project location
+- ð **Real-time Progress** - Monitor 4-agent pipeline: Enhancer â Architect â Programmer â Reviewer
+- ð´ **3D Visualization** - Interactive Three.js viewer with multiple render modes (realistic, wireframe, xray)
+- ð¤ **Multi-format Export** - IFC (Revit/ArchiCAD compatible), glTF/GLB, and more
+- ð **Software Integration** - Connect to Revit, ArchiCAD, Rhino, SketchUp via MCP
+- â¡ **React Hooks** - `useGaude`, `useBIMViewer` for seamless state management
+- ð¡ï¸ **Secure by Design** - API keys never exposed in client code, rate limiting, error handling
+- ð¦ **TypeScript Ready** - Full type definitions included
 
 ## Quick Start
 
@@ -95,22 +95,22 @@ export default App;
 ## Architecture
 
 ```
-┌─────────────────────────────────────┐
-│      Your React Application         │
-├─────────────────────────────────────┤
-│  GAUD-E SDK (NPM Package)           │
-│  ├─ GaudeClient (API wrapper)       │
-│  ├─ React Hooks (useGaude, etc.)    │
-│  ├─ Components (Viewer, Prompt)     │
-│  └─ Utilities (Schema, Materials)   │
-├─────────────────────────────────────┤
-│  GAUD-E Platform API                │
-│  ├─ Enhancer Agent                  │
-│  ├─ Architect Agent                 │
-│  ├─ Programmer Agent                │
-│  ├─ Reviewer Agent                  │
-│  └─ BIM Database                    │
-└─────────────────────────────────────┘
+âââââââââââââââââââââââââââââââââââââââ
+â      Your React Application         â
+âââââââââââââââââââââââââââââââââââââââ¤
+â  GAUD-E SDK (NPM Package)           â
+â  ââ GaudeClient (API wrapper)       â
+â  ââ React Hooks (useGaude, etc.)    â
+â  ââ Components (Viewer, Prompt)     â
+â  ââ Utilities (Schema, Materials)   â
+âââââââââââââââââââââââââââââââââââââââ¤
+â  GAUD-E Platform API                â
+â  ââ Enhancer Agent                  â
+â  ââ Architect Agent                 â
+â  ââ Programmer Agent                â
+â  ââ Reviewer Agent                  â
+â  ââ BIM Database                    â
+âââââââââââââââââââââââââââââââââââââââ
     All calls to: api.gaude.ai/v1
 ```
 
@@ -281,12 +281,12 @@ Choose from multiple architectural design styles:
 
 ## Security
 
-✓ **API keys never exposed to client** - Use environment variables
-✓ **Rate limiting** - 100 requests/minute per key
-✓ **Secure webhooks** - Optional real-time job notifications
-✓ **No generation code exposed** - All processing server-side
-✓ **Request signing** - Bearer token authentication
-✓ **Audit logs** - Track all API activity
+â **API keys never exposed to client** - Use environment variables
+â **Rate limiting** - 100 requests/minute per key
+â **Secure webhooks** - Optional real-time job notifications
+â **No generation code exposed** - All processing server-side
+â **Request signing** - Bearer token authentication
+â **Audit logs** - Track all API activity
 
 For production:
 - Store API keys in backend environment variables
@@ -365,28 +365,28 @@ A: Check usage at https://platform.gaude.ai/account/usage
 ## Developer
 
 **Ricardo Riffo Q.**
-Arquitecto Urbanista | Magíster en Inteligencia Artificial | Experto en Evaluaciones Energéticas y Medioambiente
+Arquitecto Urbanista | MagÃ­ster en Inteligencia Artificial | Experto en Evaluaciones EnergÃ©ticas y Medioambiente
 
-Desarrollador de productos de IA para Ingeniería, Arquitectura y Salud.
+Desarrollador de productos de IA para IngenierÃ­a, Arquitectura y Salud.
 
-- 🏛️ **Especialidades:** Diseño Arquitectónico Paramétrico, BIM, Urbanismo, Smart Cities
-- 🤖 **IA Aplicada:** Modelos multiagente, generación 3D desde lenguaje natural, Computer Vision
-- 🌱 **Sustentabilidad:** Certificaciones LEED, Passivhaus, evaluación de impacto ambiental
-- 🏥 **Salud:** Soluciones de IA para infraestructura hospitalaria y bienestar
+- ðï¸ **Especialidades:** DiseÃ±o ArquitectÃ³nico ParamÃ©trico, BIM, Urbanismo, Smart Cities
+- ð¤ **IA Aplicada:** Modelos multiagente, generaciÃ³n 3D desde lenguaje natural, Computer Vision
+- ð± **Sustentabilidad:** Certificaciones LEED, Passivhaus, evaluaciÃ³n de impacto ambiental
+- ð¥ **Salud:** Soluciones de IA para infraestructura hospitalaria y bienestar
 
 ## License
 
-MIT © 2026 Ricardo Riffo Q. — GAUD-E Architect AI
+MIT Â© 2026 Ricardo Riffo Q. â GAUD-E Architect AI
 
 See [LICENSE](./LICENSE) file for details.
 
 ## Support
 
-- 📧 **Email:** support@gaude.ai
-- 💬 **Discord:** https://discord.gg/gaude
-- 📖 **Docs:** https://docs.gaude.ai
-- 🐛 **Issues:** https://github.com/rickygaude-rgb/gaud-e-sdk/issues
-- 📊 **Status:** https://status.gaude.ai
+- ð§ **Email:** support@gaude.ai
+- ð¬ **Discord:** https://discord.gg/gaude
+- ð **Docs:** https://docs.gaude.ai
+- ð **Issues:** https://github.com/rickygaude-rgb/gaud-e-sdk/issues
+- ð **Status:** https://status.gaude.ai
 
 ## Related Resources
 
@@ -398,8 +398,8 @@ See [LICENSE](./LICENSE) file for details.
 
 ---
 
-Developed by **Ricardo Riffo Q.** — Arquitecto Urbanista, Magíster en IA
+Developed by **Ricardo Riffo Q.** â Arquitecto Urbanista, MagÃ­ster en IA
 
-Made with ❤️ by GAUD-E Architect AI
+Made with â¤ï¸ by GAUD-E Architect AI
 
 **API Routes All Generation Through:** `https://api.gaude.ai/v1`
