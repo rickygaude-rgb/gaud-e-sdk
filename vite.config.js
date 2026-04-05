@@ -26,7 +26,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.js'),
       name: 'GaudeSDK',
       formats: ['es', 'cjs'],
-      fileName: (format) => \`index.\${format === 'es' ? 'es' : 'cjs'}.js\`,
+      fileName: (format) => `index.${format === 'es' ? 'es' : 'cjs'}.js`,
     },
     rollupOptions: {
       // Externalize peer dependencies — NOT bundled into the SDK
