@@ -55,7 +55,7 @@ export async function handleGaudeAPI(req, res) {
  * @private
  */
 async function handleGenerate(body, res) {
-  const { GaudeClient } = await import('@gaude/sdk');
+  const { GaudeClient } = await import('gaud-e-sdk');
 
   try {
     const client = new GaudeClient(
@@ -85,7 +85,7 @@ async function handleGenerate(body, res) {
  * @private
  */
 async function handleStatus(jobId, res) {
-  const { GaudeClient } = await import('@gaude/sdk');
+  const { GaudeClient } = await import('gaud-e-sdk');
 
   try {
     const client = new GaudeClient(
@@ -110,7 +110,7 @@ async function handleStatus(jobId, res) {
  * Communicates with backend API instead of directly calling GAUD-E
  */
 import React, { useState, useCallback } from 'react';
-import { GaudePromptInput, GaudeBIMViewer, GaudeGenerationStatus } from '@gaude/sdk';
+import { GaudePromptInput, GaudeBIMViewer, GaudeGenerationStatus } from 'gaud-e-sdk';
 
 /**
  * useGaudeBackend Hook
