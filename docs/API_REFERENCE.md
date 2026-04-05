@@ -29,7 +29,7 @@ const client = new GaudeClient(apiKey, baseUrl);
 
 **Example:**
 ```javascript
-import { GaudeClient } from '@gaude/sdk';
+import { GaudeClient } from 'gaud-e-sdk';
 
 const client = new GaudeClient('gde_your_api_key');
 ```
@@ -505,7 +505,7 @@ Real-time generation progress with 4-agent pipeline visualization.
 Validate BIM model structure against schema.
 
 ```javascript
-import { validateBIMModel } from '@gaude/sdk';
+import { validateBIMModel } from 'gaud-e-sdk';
 
 const result = validateBIMModel(bimModel);
 if (!result.valid) {
@@ -518,7 +518,7 @@ if (!result.valid) {
 Create a blank BIM model template.
 
 ```javascript
-import { createEmptyModel } from '@gaude/sdk';
+import { createEmptyModel } from 'gaud-e-sdk';
 
 const template = createEmptyModel('New Project', {
   buildingType: 'commercial',
@@ -531,7 +531,7 @@ const template = createEmptyModel('New Project', {
 Pre-configured material library.
 
 ```javascript
-import { BIM_MATERIALS, getMaterialForElement } from '@gaude/sdk';
+import { BIM_MATERIALS, getMaterialForElement } from 'gaud-e-sdk';
 
 const material = getMaterialForElement('column');
 // { color: '#a0a0a0', roughness: 0.85, ... }
@@ -544,7 +544,7 @@ const material = getMaterialForElement('column');
 ### GaudeAPIError
 
 ```javascript
-import { GaudeClient, GaudeAPIError } from '@gaude/sdk';
+import { GaudeClient, GaudeAPIError } from 'gaud-e-sdk';
 
 try {
   await client.generateBIM(prompt);
@@ -659,7 +659,7 @@ const client = new GaudeClient(apiKey, baseUrl);
 
 **Example:**
 ```javascript
-import { GaudeClient } from '@gaude/sdk';
+import { GaudeClient } from 'gaud-e-sdk';
 
 const client = new GaudeClient('gde_your_api_key');
 ```
@@ -1135,7 +1135,7 @@ Real-time generation progress with 4-agent pipeline visualization.
 Validate BIM model structure against schema.
 
 ```javascript
-import { validateBIMModel } from '@gaude/sdk';
+import { validateBIMModel } from 'gaud-e-sdk';
 
 const result = validateBIMModel(bimModel);
 if (!result.valid) {
@@ -1148,7 +1148,7 @@ if (!result.valid) {
 Create a blank BIM model template.
 
 ```javascript
-import { createEmptyModel } from '@gaude/sdk';
+import { createEmptyModel } from 'gaud-e-sdk';
 
 const template = createEmptyModel('New Project', {
   buildingType: 'commercial',
@@ -1161,7 +1161,7 @@ const template = createEmptyModel('New Project', {
 Pre-configured material library.
 
 ```javascript
-import { BIM_MATERIALS, getMaterialForElement } from '@gaude/sdk';
+import { BIM_MATERIALS, getMaterialForElement } from 'gaud-e-sdk';
 
 const material = getMaterialForElement('column');
 // { color: '#a0a0a0', roughness: 0.85, ... }
@@ -1174,7 +1174,7 @@ const material = getMaterialForElement('column');
 ### GaudeAPIError
 
 ```javascript
-import { GaudeClient, GaudeAPIError } from '@gaude/sdk';
+import { GaudeClient, GaudeAPIError } from 'gaud-e-sdk';
 
 try {
   await client.generateBIM(prompt);
