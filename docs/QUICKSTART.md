@@ -11,9 +11,9 @@ Get started with BIM generation in 5 minutes.
 ## Installation
 
 ```bash
-npm install @gaude/sdk
+npm install gaud-e-sdk
 # or
-yarn add @gaude/sdk
+yarn add gaud-e-sdk
 ```
 
 ## 1. Get API Keys
@@ -46,7 +46,7 @@ VITE_GOOGLE_MAPS_KEY=your_google_maps_key
 
 ```jsx
 import React, { useState } from 'react';
-import { useGaude, GaudePromptInput, GaudeBIMViewer } from '@gaude/sdk';
+import { useGaude, GaudePromptInput, GaudeBIMViewer } from 'gaud-e-sdk';
 
 function App() {
   const [model, setModel] = useState(null);
@@ -122,7 +122,7 @@ Then:
 ## 4. Advanced: With Terrain Selection
 
 ```jsx
-import { GaudeMapSelector } from '@gaude/sdk';
+import { GaudeMapSelector } from 'gaud-e-sdk';
 
 function AdvancedApp() {
   const [terrain, setTerrain] = useState(null);
@@ -154,7 +154,7 @@ function AdvancedApp() {
 ## 5. Monitor Generation Progress
 
 ```jsx
-import { GaudeGenerationStatus } from '@gaude/sdk';
+import { GaudeGenerationStatus } from 'gaud-e-sdk';
 
 function StatusMonitor({ jobId, apiKey }) {
   return (
@@ -172,7 +172,7 @@ function StatusMonitor({ jobId, apiKey }) {
 ## 6. Export Generated Model
 
 ```jsx
-import { GaudeClient } from '@gaude/sdk';
+import { GaudeClient } from 'gaud-e-sdk';
 
 async function exportModel(modelId, apiKey) {
   const client = new GaudeClient(apiKey);
@@ -236,9 +236,9 @@ Get started with BIM generation in 5 minutes.
 ## Installation
 
 ```bash
-npm install @gaude/sdk
+npm install gaud-e-sdk
 # or
-yarn add @gaude/sdk
+yarn add gaud-e-sdk
 ```
 
 ## 1. Get API Keys
@@ -271,7 +271,7 @@ VITE_GOOGLE_MAPS_KEY=your_google_maps_key
 
 ```jsx
 import React, { useState } from 'react';
-import { useGaude, GaudePromptInput, GaudeBIMViewer } from '@gaude/sdk';
+import { useGaude, GaudePromptInput, GaudeBIMViewer } from 'gaud-e-sdk';
 
 function App() {
   const [model, setModel] = useState(null);
@@ -347,7 +347,7 @@ Then:
 ## 4. Advanced: With Terrain Selection
 
 ```jsx
-import { GaudeMapSelector } from '@gaude/sdk';
+import { GaudeMapSelector } from 'gaud-e-sdk';
 
 function AdvancedApp() {
   const [terrain, setTerrain] = useState(null);
@@ -379,7 +379,7 @@ function AdvancedApp() {
 ## 5. Monitor Generation Progress
 
 ```jsx
-import { GaudeGenerationStatus } from '@gaude/sdk';
+import { GaudeGenerationStatus } from 'gaud-e-sdk';
 
 function StatusMonitor({ jobId, apiKey }) {
   return (
@@ -397,7 +397,7 @@ function StatusMonitor({ jobId, apiKey }) {
 ## 6. Export Generated Model
 
 ```jsx
-import { GaudeClient } from '@gaude/sdk';
+import { GaudeClient } from 'gaud-e-sdk';
 
 async function exportModel(modelId, apiKey) {
   const client = new GaudeClient(apiKey);
