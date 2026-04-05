@@ -142,7 +142,7 @@ export const SDK_VERSION = '1.0.0';
  */
 export function getSDKInfo() {
   return {
-    name: '@gaude/sdk',
+    name: 'gaud-e-sdk',
     version: SDK_VERSION,
     description: 'GAUD-E Developer SDK for BIM generation via GAUD-E Platform API',
     author: 'GAUD-E Architect AI',
@@ -226,7 +226,7 @@ export const SDK_VERSION = '1.0.0';
  */
 export function getSDKInfo() {
   return {
-    name: '@gaude/sdk',
+    name: 'gaud-e-sdk',
     version: SDK_VERSION,
     description: 'GAUD-E Developer SDK for BIM generation via GAUD-E Platform API',
     author: 'GAUD-E Architect AI',
@@ -310,7 +310,7 @@ export const SDK_VERSION = '1.0.0';
  */
 export function getSDKInfo() {
   return {
-    name: '@gaude/sdk',
+    name: 'gaud-e-sdk',
     version: SDK_VERSION,
     description: 'GAUD-E Developer SDK for BIM generation via GAUD-E Platform API',
     author: 'GAUD-E Architect AI',
