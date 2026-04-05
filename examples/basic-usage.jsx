@@ -18,7 +18,7 @@ import {
   GaudePromptInput,
   GaudeGenerationStatus,
   GaudeClient,
-} from '@gaude/sdk';
+} from 'gaud-e-sdk';
 
 /**
  * BasicGAUDEApp Component
@@ -222,7 +222,7 @@ export function BasicGAUDEApp() {
                   {terrain && (
                     <div className="p-4 bg-green-50 border border-green-200 rounded">
                       <p className="text-sm text-green-800">
-                        ✓ Location selected: {terrain.length} points
+                        â Location selected: {terrain.length} points
                       </p>
                       <button
                         onClick={() => setCurrentStep('prompt')}
@@ -333,11 +333,11 @@ export function BasicGAUDEApp() {
               {currentStep === 'generating' && (
                 <div className="w-full h-full flex items-center justify-center bg-gray-100">
                   <div className="text-center">
-                    <div className="inline-block animate-spin text-4xl mb-4">⏳</div>
+                    <div className="inline-block animate-spin text-4xl mb-4">â³</div>
                     <p className="text-gray-600 font-medium">Generating your BIM model...</p>
                     <p className="text-sm text-gray-500 mt-2">This may take a few minutes</p>
                     <p className="text-xs text-gray-400 mt-4">
-                      Running 4-agent pipeline: Enhancer → Architect → Programmer → Reviewer
+                      Running 4-agent pipeline: Enhancer â Architect â Programmer â Reviewer
                     </p>
                   </div>
                 </div>
