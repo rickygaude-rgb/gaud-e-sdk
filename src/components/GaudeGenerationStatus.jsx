@@ -1,7 +1,10 @@
 /**
  * GaudeGenerationStatus Component
- * Shows real-time generation progress through the 4-agent pipeline
- * Agents: Enhancer → Architect → Programmer → Reviewer
+ * Shows real-time generation progress through the 7-agent pipeline across 4 phases
+ * Phase 1: Enhancer → Architect
+ * Phase 2: Structural ∥ MEP ∥ Landscape (parallel)
+ * Phase 3: BIM Programmer
+ * Phase 4: Quality Reviewer
  */
 
 import React, { useEffect, useState, useCallback } from 'react';
@@ -10,30 +13,72 @@ import { GaudeClient } from '../utils/gaude-client';
 /**
  * Agent in the generation pipeline
  */
+/**
+ * Pipeline phases for the 7-agent architecture
+ */
+export const PHASES = [
+  { id: 'phase1', name: 'Phase 1 — Architectural Design', agents: ['enhancer', 'architect'] },
+  { id: 'phase2', name: 'Phase 2 — Engineering Systems (parallel)', agents: ['structural', 'mep', 'landscape'] },
+  { id: 'phase3', name: 'Phase 3 — BIM Consolidation', agents: ['programmer'] },
+  { id: 'phase4', name: 'Phase 4 — Quality Assurance', agents: ['reviewer'] },
+];
+
 export const AGENTS = [
   {
     id: 'enhancer',
-    name: 'Enhancer',
-    description: 'Refining your prompt for optimal results',
+    name: 'Instruction Enhancer',
+    description: 'Refining your prompt with CoT optimization',
     icon: '✨',
+    phase: 1,
+    model: 'Claude Haiku 4.5',
   },
   {
     id: 'architect',
     name: 'Architect',
-    description: 'Designing the building structure',
+    description: 'Designing spatial layout, roofs, furniture',
     icon: '🏗️',
+    phase: 1,
+    model: 'Claude Sonnet 4',
+  },
+  {
+    id: 'structural',
+    name: 'Structural Engineer',
+    description: 'Calculating beams, foundations, bracing',
+    icon: '🔩',
+    phase: 2,
+    model: 'Claude Haiku 3.5',
+  },
+  {
+    id: 'mep',
+    name: 'MEP Engineer',
+    description: 'Designing plumbing, electrical, HVAC, fire safety',
+    icon: '⚡',
+    phase: 2,
+    model: 'Claude Haiku 3.5',
+  },
+  {
+    id: 'landscape',
+    name: 'Landscape Architect',
+    description: 'Planning vegetation, hardscape, site design',
+    icon: '🌿',
+    phase: 2,
+    model: 'Claude Haiku 3.5',
   },
   {
     id: 'programmer',
-    name: 'Programmer',
-    description: 'Generating BIM code and geometry',
+    name: 'BIM Programmer',
+    description: 'Consolidating into unified JSON BIM schema',
     icon: '💻',
+    phase: 3,
+    model: 'Claude Sonnet 3.5',
   },
   {
     id: 'reviewer',
-    name: 'Reviewer',
-    description: 'Validating design and output',
+    name: 'Quality Reviewer',
+    description: 'Validating model and preparing IFC export',
     icon: '✓',
+    phase: 4,
+    model: 'Claude Haiku 3.5',
   },
 ];
 
@@ -56,7 +101,7 @@ const STATUS_TEXT_COLORS = {
 
 /**
  * GaudeGenerationStatus Component
- * Shows progress through the 4-agent BIM generation pipeline
+ * Shows progress through the 7-agent BIM generation pipeline (4 phases)
  *
  * @component
  * @param {string} props.jobId - Job ID to monitor
@@ -82,6 +127,9 @@ export function GaudeGenerationStatus({
   const [agentProgress, setAgentProgress] = useState({
     enhancer: 'pending',
     architect: 'pending',
+    structural: 'pending',
+    mep: 'pending',
+    landscape: 'pending',
     programmer: 'pending',
     reviewer: 'pending',
   });
@@ -108,6 +156,9 @@ export function GaudeGenerationStatus({
     setAgentProgress({
       enhancer: progress.enhancer || 'pending',
       architect: progress.architect || 'pending',
+      structural: progress.structural || 'pending',
+      mep: progress.mep || 'pending',
+      landscape: progress.landscape || 'pending',
       programmer: progress.programmer || 'pending',
       reviewer: progress.reviewer || 'pending',
     });
@@ -322,19 +373,19 @@ export function GaudeGenerationStatus({
 
       {/* Notes */}
       <div className="text-xs text-gray-500 border-t border-gray-200 pt-4">
-        <p className="font-semibold text-gray-600 mb-1">Pipeline Stages:</p>
+        <p className="font-semibold text-gray-600 mb-1">7-Agent Pipeline (4 Phases):</p>
         <ul className="space-y-1 list-disc list-inside">
           <li>
-            <strong>Enhancer:</strong> Optimizes your prompt for better architecture generation
+            <strong>Phase 1:</strong> Enhancer (CoT optimization) → Architect (spatial layout, roofs, furniture)
           </li>
           <li>
-            <strong>Architect:</strong> Designs the building based on your specifications
+            <strong>Phase 2:</strong> Structural ∥ MEP ∥ Landscape — run in parallel for engineering systems
           </li>
           <li>
-            <strong>Programmer:</strong> Converts the design into BIM geometry and metadata
+            <strong>Phase 3:</strong> BIM Programmer — consolidates all disciplines into unified JSON BIM
           </li>
           <li>
-            <strong>Reviewer:</strong> Validates the model for consistency and correctness
+            <strong>Phase 4:</strong> Quality Reviewer — validates model and prepares IFC export
           </li>
         </ul>
       </div>
