@@ -11,9 +11,9 @@ Get started with BIM generation in 5 minutes.
 ## Installation
 
 ```bash
-npm install gaud-e-sdk
+npm install @gaude/sdk
 # or
-yarn add gaud-e-sdk
+yarn add @gaude/sdk
 ```
 
 ## 1. Get API Keys
@@ -46,7 +46,7 @@ VITE_GOOGLE_MAPS_KEY=your_google_maps_key
 
 ```jsx
 import React, { useState } from 'react';
-import { useGaude, GaudePromptInput, GaudeBIMViewer } from 'gaud-e-sdk';
+import { useGaude, GaudePromptInput, GaudeBIMViewer } from '@gaude/sdk';
 
 function App() {
   const [model, setModel] = useState(null);
@@ -122,7 +122,7 @@ Then:
 ## 4. Advanced: With Terrain Selection
 
 ```jsx
-import { GaudeMapSelector } from 'gaud-e-sdk';
+import { GaudeMapSelector } from '@gaude/sdk';
 
 function AdvancedApp() {
   const [terrain, setTerrain] = useState(null);
@@ -154,7 +154,7 @@ function AdvancedApp() {
 ## 5. Monitor Generation Progress
 
 ```jsx
-import { GaudeGenerationStatus } from 'gaud-e-sdk';
+import { GaudeGenerationStatus } from '@gaude/sdk';
 
 function StatusMonitor({ jobId, apiKey }) {
   return (
@@ -172,7 +172,7 @@ function StatusMonitor({ jobId, apiKey }) {
 ## 6. Export Generated Model
 
 ```jsx
-import { GaudeClient } from 'gaud-e-sdk';
+import { GaudeClient } from '@gaude/sdk';
 
 async function exportModel(modelId, apiKey) {
   const client = new GaudeClient(apiKey);
@@ -219,6 +219,7 @@ async function exportModel(modelId, apiKey) {
 
 ## Support
 
+- Live Platform: https://www.gps-2-bim.app
 - Documentation: https://docs.gaude.ai
 - Issues: https://github.com/rickygaude-rgb/gaud-e-sdk/issues
 - Email: support@gaude.ai
