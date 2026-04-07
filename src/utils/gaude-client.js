@@ -109,7 +109,7 @@ export class GaudeClient {
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${this.apiKey}`,
-      'User-Agent': 'GAUD-E-SDK/1.0.0',
+      'User-Agent': 'GAUD-E-SDK/2.0.0',
       ...options.headers,
     };
 
@@ -239,7 +239,7 @@ export class GaudeClient {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${this.apiKey}`,
-        'User-Agent': 'GAUD-E-SDK/1.0.0',
+        'User-Agent': 'GAUD-E-SDK/2.0.0',
       },
     });
 
@@ -278,7 +278,7 @@ export class GaudeClient {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${this.apiKey}`,
-        'User-Agent': 'GAUD-E-SDK/1.0.0',
+        'User-Agent': 'GAUD-E-SDK/2.0.0',
       },
     });
 
@@ -450,7 +450,7 @@ export class GaudeClient {
   /**
    * Get detailed logs for a generation job (for debugging)
    * @param {string} jobId - Job ID to get logs for
-   * @returns {Promise<object>} Detailed generation logs from all 4 agents
+   * @returns {Promise<object>} Detailed generation logs from all 7 agents (4 phases)
    */
   async getJobLogs(jobId) {
     if (!jobId || typeof jobId !== 'string') {
