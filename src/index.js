@@ -46,21 +46,23 @@ export {
 export { GaudeBIMViewer } from './components/GaudeBIMViewer';
 export { GaudeMapSelector } from './components/GaudeMapSelector';
 export { GaudePromptInput, CONCEPT_STYLES } from './components/GaudePromptInput';
-export { GaudeGenerationStatus, AGENTS } from './components/GaudeGenerationStatus';
+export { GaudeGenerationStatus, AGENTS, PHASES } from './components/GaudeGenerationStatus';
 
 /**
  * SDK Version
  */
-export const SDK_VERSION = '1.0.0';
+export const SDK_VERSION = '2.0.0';
 
 /**
  * Get SDK information
  */
 export function getSDKInfo() {
   return {
-    name: 'gaud-e-sdk',
+    name: '@gaude/sdk',
     version: SDK_VERSION,
-    description: 'GAUD-E Developer SDK for BIM generation via GAUD-E Platform API',
+    description: 'GAUD-E Developer SDK — 7-Agent AI Pipeline for BIM generation (GPS-to-BIM)',
+    pipeline: '7 agents across 4 phases: Enhancer → Architect → [Structural ∥ MEP ∥ Landscape] → Programmer → Reviewer',
+    platform: 'https://www.gps-2-bim.app',
     author: 'GAUD-E Architect AI',
     license: 'MIT',
     repository: 'https://github.com/rickygaude-rgb/gaud-e-sdk',
