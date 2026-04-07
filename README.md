@@ -1,6 +1,6 @@
 # GAUD-E Developer SDK
 
-[![NPM Version](https://img.shields.io/npm/v/gaud-e-sdk)](https://www.npmjs.com/package/gaud-e-sdk)
+[![NPM Version](https://img.shields.io/npm/v/@gaude/sdk)](https://www.npmjs.com/package/@gaude/sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/rickygaude-rgb/gaud-e-sdk/actions)
 [![Code Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/rickygaude-rgb/gaud-e-sdk)
@@ -8,18 +8,31 @@
 **GAUD-E SDK** is an open-source, production-ready developer toolkit for integrating AI-powered BIM (Building Information Modeling) generation into your React applications. Generate complex architectural designs and building models from natural language prompts, visualize them in 3D, and export to industry-standard formats.
 
 ```
-GAUD-E Platform API
-├── 4-Agent Pipeline
-│   ├── ✨ Enhancer (prompt optimization)
-│   ├── 🏗️  Architect (design generation)
-│   ├── 💻 Programmer (BIM geometry)
-│   └── ✓  Reviewer (validation)
+GAUD-E Platform API — 7-Agent Pipeline across 4 Phases
+│
+├── Phase 1: Architectural Design
+│   ├── ✨ Agent 1 — Instruction Enhancer (CoT prompt optimization)
+│   └── 🏗️  Agent 2 — Architect (spatial layout, roofs, furniture)
+│
+├── Phase 2: Engineering Systems (parallel execution)
+│   ├── 🔩 Agent 3 — Structural Engineer (beams, foundations, bracing)
+│   ├── ⚡ Agent 4 — MEP Engineer (plumbing, electrical, HVAC, fire)
+│   └── 🌿 Agent 5 — Landscape Architect (vegetation, hardscape, site)
+│
+├── Phase 3: BIM Consolidation
+│   └── 💻 Agent 6 — BIM Programmer (unified JSON BIM schema)
+│
+├── Phase 4: Quality Assurance
+│   └── ✓  Agent 7 — Quality Reviewer (validation + IFC export)
+│
 └── JSON BIM Output
-    ├── Structural elements
-    ├── Architectural features
-    ├── MEP systems
-    └── Landscape/site
+    ├── Structural elements (columns, beams, foundations, bracing)
+    ├── Architectural features (walls, roofs, doors, windows, furniture)
+    ├── MEP systems (plumbing, electrical, HVAC, fire safety)
+    └── Landscape/site (vegetation, hardscape, terrain)
 ```
+
+**Live Platform:** [https://www.gps-2-bim.app](https://www.gps-2-bim.app)
 
 **All processing happens on GAUD-E's secure cloud platform.** The SDK is a lightweight wrapper that routes requests through `api.gaude.ai`. No proprietary generation code is exposed—developers get a clean, secure API.
 
@@ -28,7 +41,7 @@ GAUD-E Platform API
 - 🎯 **Natural Language BIM Generation** - Describe buildings in plain English
 - 🎨 **Multiple Design Styles** - Minimalist, Bioclimatic, Parametric, Neoclassic, Industrial, and more
 - 🌍 **Terrain Selection** - Draw polygons on Google Maps to set your project location
-- 📊 **Real-time Progress** - Monitor 4-agent pipeline: Enhancer → Architect → Programmer → Reviewer
+- 📊 **Real-time Progress** - Monitor 7-agent pipeline across 4 phases with parallel engineering execution
 - 🔴 **3D Visualization** - Interactive Three.js viewer with multiple render modes (realistic, wireframe, xray)
 - 📤 **Multi-format Export** - IFC (Revit/ArchiCAD compatible), glTF/GLB, and more
 - 🔗 **Software Integration** - Connect to Revit, ArchiCAD, Rhino, SketchUp via MCP
@@ -41,9 +54,9 @@ GAUD-E Platform API
 ### 1. Install
 
 ```bash
-npm install gaud-e-sdk
+npm install @gaude/sdk
 # or
-yarn add gaud-e-sdk
+yarn add @gaude/sdk
 ```
 
 ### 2. Get Your API Key
@@ -62,7 +75,7 @@ VITE_GOOGLE_MAPS_KEY=your_google_maps_key_here
 
 ```jsx
 import React, { useState } from 'react';
-import { useGaude, GaudePromptInput, GaudeBIMViewer } from 'gaud-e-sdk';
+import { useGaude, GaudePromptInput, GaudeBIMViewer } from '@gaude/sdk';
 
 function App() {
   const [model, setModel] = useState(null);
@@ -95,23 +108,24 @@ export default App;
 ## Architecture
 
 ```
-┌─────────────────────────────────────┐
-│      Your React Application         │
-├─────────────────────────────────────┤
-│  GAUD-E SDK (NPM Package)           │
-│  ├─ GaudeClient (API wrapper)       │
-│  ├─ React Hooks (useGaude, etc.)    │
-│  ├─ Components (Viewer, Prompt)     │
-│  └─ Utilities (Schema, Materials)   │
-├─────────────────────────────────────┤
-│  GAUD-E Platform API                │
-│  ├─ Enhancer Agent                  │
-│  ├─ Architect Agent                 │
-│  ├─ Programmer Agent                │
-│  ├─ Reviewer Agent                  │
-│  └─ BIM Database                    │
-└─────────────────────────────────────┘
-    All calls to: api.gaude.ai/v1
+┌──────────────────────────────────────────────────┐
+│         Your React Application                   │
+├──────────────────────────────────────────────────┤
+│  GAUD-E SDK (NPM Package)                        │
+│  ├─ GaudeClient (API wrapper)                    │
+│  ├─ React Hooks (useGaude, useBIMViewer)         │
+│  ├─ Components (Viewer, Prompt, Map, Status)     │
+│  └─ Utilities (Schema, Materials, Geometry)      │
+├──────────────────────────────────────────────────┤
+│  GAUD-E Platform API — 7-Agent Pipeline          │
+│  ├─ Phase 1: Enhancer → Architect                │
+│  ├─ Phase 2: Structural ∥ MEP ∥ Landscape       │
+│  ├─ Phase 3: BIM Programmer (consolidation)      │
+│  ├─ Phase 4: Quality Reviewer (validation)       │
+│  └─ BIM Database + IFC Export Engine             │
+└──────────────────────────────────────────────────┘
+  Live: https://www.gps-2-bim.app
+  API:  https://api.gaude.ai/v1
 ```
 
 ## API Usage Examples
@@ -119,7 +133,7 @@ export default App;
 ### Generate BIM Model
 
 ```javascript
-import { GaudeClient } from 'gaud-e-sdk';
+import { GaudeClient } from '@gaude/sdk';
 
 const client = new GaudeClient(process.env.VITE_GAUD_E_API_KEY);
 
@@ -142,7 +156,7 @@ console.log(job.jobId); // Track progress
 // Check status periodically
 const status = await client.getGenerationStatus(jobId);
 console.log(status.progress); // 0-100
-console.log(status.agentProgress); // { enhancer, architect, programmer, reviewer }
+console.log(status.agentProgress); // { enhancer, architect, structural, mep, landscape, programmer, reviewer }
 
 if (status.status === 'completed') {
   const model = await client.getModel(status.modelId);
@@ -362,21 +376,9 @@ A: Verify Google Maps API key is correct and Maps API is enabled.
 **Q: Out of credits**
 A: Check usage at https://platform.gaude.ai/account/usage
 
-## Developer
-
-**Ricardo Riffo Q.**
-Arquitecto Urbanista | Magíster en Inteligencia Artificial | Experto en Evaluaciones Energéticas y Medioambiente
-
-Desarrollador de productos de IA para Ingeniería, Arquitectura y Salud.
-
-- 🏛️ **Especialidades:** Diseño Arquitectónico Paramétrico, BIM, Urbanismo, Smart Cities
-- 🤖 **IA Aplicada:** Modelos multiagente, generación 3D desde lenguaje natural, Computer Vision
-- 🌱 **Sustentabilidad:** Certificaciones LEED, Passivhaus, evaluación de impacto ambiental
-- 🏥 **Salud:** Soluciones de IA para infraestructura hospitalaria y bienestar
-
 ## License
 
-MIT © 2026 Ricardo Riffo Q. — GAUD-E Architect AI
+MIT © 2026 GAUD-E Architect AI
 
 See [LICENSE](./LICENSE) file for details.
 
@@ -390,15 +392,13 @@ See [LICENSE](./LICENSE) file for details.
 
 ## Related Resources
 
-- [GAUD-E Platform](https://gaud-e-architect-ai.vercel.app/)
-- [GAUD-E Research Paper](./paper/GAUD-E_Scientific_Paper_2026.pdf)
+- [GAUD-E Platform](https://platform.gaude.ai)
+- [GAUD-E Research Paper](https://github.com/rickygaude-rgb/gaud-e-sdk/blob/main/paper/GAUD-E_Scientific_Paper_2026.pdf)
 - [Building Smart IFC Standard](https://www.buildingsmart.org/)
 - [Three.js Documentation](https://threejs.org/)
 - [glTF Specification](https://www.khronos.org/gltf/)
 
 ---
-
-Developed by **Ricardo Riffo Q.** — Arquitecto Urbanista, Magíster en IA
 
 Made with ❤️ by GAUD-E Architect AI
 
