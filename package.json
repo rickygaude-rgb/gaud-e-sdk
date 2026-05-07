@@ -1,24 +1,16 @@
 {
   "name": "@gaude/sdk",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "GAUD-E Developer SDK — 7-Agent AI Pipeline for BIM generation. GPS-to-BIM via API: Enhancer, Architect, Structural, MEP, Landscape, Programmer, Reviewer across 4 phases.",
   "type": "module",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/index.d.ts"
+      "import": "./src/index.js",
+      "default": "./src/index.js"
     }
   },
-  "files": [
-    "dist",
-    "docs",
-    "README.md",
-    "LICENSE"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -27,7 +19,7 @@
     "type-check": "tsc --noEmit",
     "test": "vitest",
     "docs": "typedoc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "echo 'Publishing source files directly'"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",
@@ -64,36 +56,23 @@
     "@react-three/drei": "^9.0.0"
   },
   "peerDependenciesMeta": {
-    "three": {
-      "optional": false
-    },
-    "@react-three/fiber": {
-      "optional": false
-    },
-    "@react-three/drei": {
-      "optional": false
-    }
+    "three": { "optional": false },
+    "@react-three/fiber": { "optional": false },
+    "@react-three/drei": { "optional": false }
   },
   "keywords": [
-    "gaud-e",
-    "bim",
-    "architecture",
-    "3d-modeling",
-    "building-information-modeling",
-    "ai-generation",
-    "gps-to-bim",
-    "7-agent-pipeline",
-    "structural-engineering",
-    "mep",
-    "landscape",
-    "three.js",
-    "ifc",
-    "revit",
-    "archicad",
+    "gaud-e", "bim", "architecture", "3d-modeling",
+    "building-information-modeling", "ai-generation",
+    "gps-to-bim", "7-agent-pipeline", "structural-engineering",
+    "mep", "landscape", "three.js", "ifc", "revit", "archicad",
     "parametric-design"
   ],
-  "author": "GAUD-E Architect AI",
-  "license": "MIT",
+  "author": {
+    "name": "Ricardo Riffo",
+    "email": "rickygaude@gmail.com",
+    "url": "https://www.gps-2-bim.app"
+  },
+  "license": "Elastic-2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rickygaude-rgb/gaud-e-sdk.git"
