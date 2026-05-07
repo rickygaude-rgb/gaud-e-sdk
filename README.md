@@ -5,9 +5,9 @@
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/rickygaude-rgb/gaud-e-sdk/actions)
 [![Code Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/rickygaude-rgb/gaud-e-sdk)
 
-**GAUD-E SDK** is an open-source, production-ready developer toolkit for integrating AI-powered BIM (Building Information Modeling) generation into your React applications. Generate complex architectural designs and building models from natural language prompts, visualize them in 3D, and export to industry-standard formats.
+**GAUD-E SDK** is a production-ready developer toolkit for integrating AI-powered BIM (Building Information Modeling) generation into your React applications. Generate complex architectural designs and building models from natural language prompts, visualize them in 3D, and export to industry-standard formats.
 
-> ⚠️ **License Change Notice (v2.0.1):** As of version 2.0.1, the GAUD-E SDK is licensed under the **Elastic License 2.0 (ELv2)**. Free to use in your own apps — you **may not** offer it as a competing hosted/managed service. See [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md).
+> ⚠️ **License Change Notice (v2.0.1):** This project is no longer MIT. As of version 2.0.1, the GAUD-E SDK is licensed under the **Elastic License 2.0 (ELv2)**. You may use, modify, and distribute this software freely, but you **may not** offer it as a competing hosted/managed service. See [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md) for full details.
 
 ```
 GAUD-E Platform API — 7-Agent Pipeline across 4 Phases
@@ -380,9 +380,21 @@ A: Check usage at https://platform.gaude.ai/account/usage
 
 ## License
 
-MIT © 2026 GAUD-E Architect AI
+**Elastic License 2.0 (ELv2)** © 2026 Ricardo Riffo — GAUD-E / GPS2BIM
 
-See [LICENSE](./LICENSE) file for details.
+See [LICENSE](./LICENSE) file for full terms.
+
+**In summary:**
+- ✅ You can use, modify, and distribute this SDK in your own applications
+- ✅ You can build commercial products that call the GAUD-E API
+- ❌ You may **not** offer this SDK or a derivative as a competing hosted/managed service
+- ❌ You may **not** remove or bypass license/copyright notices
+
+For commercial licensing or enterprise agreements: contacto@gaud-e.ai
+
+> **Prior version notice:** v2.0.0 was released under MIT. That version remains
+> under MIT for those who downloaded it before 2026-05-07. All subsequent
+> versions (v2.0.1+) are governed by ELv2. See [NOTICE.md](./NOTICE.md).
 
 ## Support
 

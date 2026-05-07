@@ -1,9 +1,9 @@
 # NOTICE — License Change
 
-**Date:** 2026-05-07
-**Effective from:** v2.0.1
-**Author/Copyright holder:** Ricardo Riffo — GAUD-E / GPS2BIM
-**Contact:** rickygaude@gmail.com
+**Date:** 2026-05-07  
+**Effective from:** v2.0.1  
+**Author/Copyright holder:** Ricardo Riffo — GAUD-E / GPS2BIM  
+**Contact:** contacto@gaud-e.ai  
 
 ---
 
@@ -27,7 +27,8 @@ under MIT.
 
 However:
 
-- **Any new version** of the SDK (v2.0.1 and onward) is governed exclusively by ELv2.
+- **Any new version** of the SDK (v2.0.1 and onward) is governed exclusively
+  by ELv2.
 - **Continued use of this GitHub repository** (cloning, pulling, forking after
   2026-05-07) implies acceptance of ELv2 terms.
 - **Building a competing managed service** using any version of this SDK is
@@ -37,17 +38,18 @@ However:
 
 ## What ELv2 Allows
 
-- Use the SDK in your own applications (commercial or personal)
-- Build products that integrate with the GAUD-E API (api.gaude.ai)
-- Modify the SDK for your internal use
-- Distribute the SDK as part of your application
+- ✅ Use the SDK in your own applications (commercial or personal)
+- ✅ Build products that integrate with the GAUD-E API (`api.gaude.ai`)
+- ✅ Modify the SDK for your internal use
+- ✅ Distribute the SDK as part of your application
+- ✅ Contribute back under the same license
 
 ## What ELv2 Prohibits
 
-- Offering the SDK (or a derivative) as a hosted or managed service to
+- ❌ Offering the SDK (or a derivative) as a hosted or managed service to
   third parties that competes with GAUD-E / GPS2BIM
-- Removing or bypassing license key or copyright notices
-- Using GAUD-E or GPS2BIM trademarks without permission
+- ❌ Removing or bypassing license key or copyright notices
+- ❌ Using GAUD-E or GPS2BIM trademarks without permission
 
 ---
 
@@ -66,8 +68,8 @@ our own code.
 If your use case falls outside ELv2 permissions, contact us for a commercial
 license agreement:
 
-- **Email:** rickygaude@gmail.com
-- **Platform:** https://www.gps-2-bim.app
+- **Email:** contacto@gaud-e.ai  
+- **Platform:** https://www.gps-2-bim.app  
 - **API:** https://api.gaude.ai
 
 ---

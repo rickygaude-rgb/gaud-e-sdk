@@ -11,6 +11,12 @@
       "default": "./src/index.js"
     }
   },
+  "files": [
+    "src",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -56,20 +62,37 @@
     "@react-three/drei": "^9.0.0"
   },
   "peerDependenciesMeta": {
-    "three": { "optional": false },
-    "@react-three/fiber": { "optional": false },
-    "@react-three/drei": { "optional": false }
+    "three": {
+      "optional": false
+    },
+    "@react-three/fiber": {
+      "optional": false
+    },
+    "@react-three/drei": {
+      "optional": false
+    }
   },
   "keywords": [
-    "gaud-e", "bim", "architecture", "3d-modeling",
-    "building-information-modeling", "ai-generation",
-    "gps-to-bim", "7-agent-pipeline", "structural-engineering",
-    "mep", "landscape", "three.js", "ifc", "revit", "archicad",
+    "gaud-e",
+    "bim",
+    "architecture",
+    "3d-modeling",
+    "building-information-modeling",
+    "ai-generation",
+    "gps-to-bim",
+    "7-agent-pipeline",
+    "structural-engineering",
+    "mep",
+    "landscape",
+    "three.js",
+    "ifc",
+    "revit",
+    "archicad",
     "parametric-design"
   ],
   "author": {
     "name": "Ricardo Riffo",
-    "email": "rickygaude@gmail.com",
+    "email": "contacto@gaud-e.ai",
     "url": "https://www.gps-2-bim.app"
   },
   "license": "Elastic-2.0",
@@ -78,7 +101,4 @@
     "url": "git+https://github.com/rickygaude-rgb/gaud-e-sdk.git"
   },
   "bugs": {
-    "url": "https://github.com/rickygaude-rgb/gaud-e-sdk/issues"
-  },
-  "homepage": "https://www.gps-2-bim.app"
-}
+    "url": "https
