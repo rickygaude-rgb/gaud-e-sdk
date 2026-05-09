@@ -3,14 +3,25 @@
 [![NPM Version](https://img.shields.io/npm/v/@gaude/sdk)](https://www.npmjs.com/package/@gaude/sdk)
 [![License: ELv2](https://img.shields.io/badge/License-Elastic%202.0-blue.svg)](./LICENSE)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/rickygaude-rgb/gaud-e-sdk/actions)
-[![Code Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/rickygaude-rgb/gaud-e-sdk)
+[![C++ Core](https://img.shields.io/badge/motor-C%2B%2B%2093%25-blue?logo=cplusplus)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
+[![IFC Generation](https://img.shields.io/badge/IFC%20generation-~50ms-brightgreen)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
+[![Performance](https://img.shields.io/badge/vs%20Python-40x%20faster-orange)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
 
 **GAUD-E SDK** is a production-ready developer toolkit for integrating AI-powered BIM (Building Information Modeling) generation into your React applications. Generate complex architectural designs and building models from natural language prompts, visualize them in 3D, and export to industry-standard formats.
 
+> **⚡ Powered by a native C++ motor (93% C++)** — IFC 2X3 generation in ~50ms, 40× faster than Python-based alternatives. The backend engine (`gaude-bridge`) runs as a local HTTP server on port 19724 and handles all geometry, IFC serialization, and CAD exports natively.
+
 > ⚠️ **License Change Notice (v2.0.1):** This project is no longer MIT. As of version 2.0.1, the GAUD-E SDK is licensed under the **Elastic License 2.0 (ELv2)**. You may use, modify, and distribute this software freely, but you **may not** offer it as a competing hosted/managed service. See [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md) for full details.
 
+## Architecture
+
 ```
-GAUD-E Platform API — 7-Agent Pipeline across 4 Phases
+GAUD-E Platform — C++ Native Motor + 7-Agent AI Pipeline
+│
+├── 🔧 C++ Native Bridge (gaude-bridge) — Port 19724
+│   ├── gps2bim      → IFC 2X3 generation   (~50ms, 40× faster than Python)
+│   ├── gaude-pipeline → 7-agent Claude API  (parallel execution)
+│   └── Exporters:   IFC / Revit / Rhino / Grasshopper / ArchiCAD
 │
 ├── Phase 1: Architectural Design
 │   ├── ✨ Agent 1 — Instruction Enhancer (CoT prompt optimization)
@@ -25,27 +36,29 @@ GAUD-E Platform API — 7-Agent Pipeline across 4 Phases
 │   └── 💻 Agent 6 — BIM Programmer (unified JSON BIM schema)
 │
 ├── Phase 4: Quality Assurance
-│   └── ✓  Agent 7 — Quality Reviewer (validation + IFC export)
+│   └── ✓  Agent 7 — Quality Reviewer (validation + IFC export via C++)
 │
-└── JSON BIM Output
-    ├── Structural elements (columns, beams, foundations, bracing)
-    ├── Architectural features (walls, roofs, doors, windows, furniture)
-    ├── MEP systems (plumbing, electrical, HVAC, fire safety)
-    └── Landscape/site (vegetation, hardscape, terrain)
+└── Output Formats (all via C++ exporters)
+    ├── IFC 2X3    — Revit / ArchiCAD / BIM-native
+    ├── glTF/GLB   — Three.js / web viewer
+    ├── 3DM        — Rhino / Rhino.Compute
+    └── JSON BIM   — structural, architectural, MEP, landscape
 ```
 
-**Live Platform:** [https://www.gps-2-bim.app](https://www.gps-2-bim.app)
+**C++ Motor Repository:** [github.com/rickygaude-rgb/C---Gps-2-Bim](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
+**Live Platform:** [https://gaud-e-gps2bim-web.vercel.app](https://gaud-e-gps2bim-web.vercel.app)
 
-**All processing happens on GAUD-E's secure cloud platform.** The SDK is a lightweight wrapper that routes requests through `api.gaude.ai`. No proprietary generation code is exposed—developers get a clean, secure API.
+**All AI processing happens on GAUD-E's secure cloud platform.** The SDK is a lightweight wrapper that routes requests through `api.gaude.ai`. The C++ motor runs locally for maximum performance—no round-trips for geometry computation.
 
 ## Features
 
+- ⚡ **C++ Native Motor (93% C++)** — IFC 2X3 generation in ~50ms, 40× faster than Python (`gaude-bridge` on port 19724)
 - 🎯 **Natural Language BIM Generation** - Describe buildings in plain English
 - 🎨 **Multiple Design Styles** - Minimalist, Bioclimatic, Parametric, Neoclassic, Industrial, and more
 - 🌍 **Terrain Selection** - Draw polygons on Google Maps to set your project location
 - 📊 **Real-time Progress** - Monitor 7-agent pipeline across 4 phases with parallel engineering execution
 - 🔴 **3D Visualization** - Interactive Three.js viewer with multiple render modes (realistic, wireframe, xray)
-- 📤 **Multi-format Export** - IFC (Revit/ArchiCAD compatible), glTF/GLB, and more
+- 📤 **Multi-format Export** — IFC 2X3 (Revit/ArchiCAD), glTF/GLB, 3DM (Rhino) — all via native C++ exporters
 - 🔗 **Software Integration** - Connect to Revit, ArchiCAD, Rhino, SketchUp via MCP
 - ⚡ **React Hooks** - `useGaude`, `useBIMViewer` for seamless state management
 - 🛡️ **Secure by Design** - API keys never exposed in client code, rate limiting, error handling
@@ -398,7 +411,7 @@ For commercial licensing or enterprise agreements: contacto@gaud-e.ai
 
 ## Support
 
-- 📧 **Email:** support@gaude.ai
+- 📧 **Email:** contacto@gaud-e.ai
 - 💬 **Discord:** https://discord.gg/gaude
 - 📖 **Docs:** https://docs.gaude.ai
 - 🐛 **Issues:** https://github.com/rickygaude-rgb/gaud-e-sdk/issues

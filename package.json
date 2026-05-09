@@ -1,6 +1,6 @@
 {
   "name": "@gaude/sdk",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "GAUD-E Developer SDK — 7-Agent AI Pipeline for BIM generation. GPS-to-BIM via API: Enhancer, Architect, Structural, MEP, Landscape, Programmer, Reviewer across 4 phases.",
   "type": "module",
   "main": "src/index.js",

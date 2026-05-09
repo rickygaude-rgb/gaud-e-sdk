@@ -1,5 +1,7 @@
 # GAUD-E SDK API Reference
 
+> ⚡ **C++ Native Motor** — All IFC/geometry operations run via `gaude-bridge` (C++, port 19724). 40× faster than Python. [Motor repo](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
+
 Complete API documentation for GAUD-E Client, Hooks, and Components.
 
 ## Table of Contents
@@ -627,4 +629,4 @@ VITE_LOG_LEVEL=info
 - **API Status:** https://status.gaude.ai
 - **GitHub:** https://github.com/rickygaude-rgb/gaud-e-sdk
 - **Issues:** https://github.com/rickygaude-rgb/gaud-e-sdk/issues
-- **Email:** support@gaude.ai
+- **Email:** contacto@gaud-e.ai

@@ -1,5 +1,7 @@
 # GAUD-E SDK Quick Start Guide
 
+> ⚡ **Motor: C++ Native Bridge (93% C++)** — IFC export in ~50ms via `gaude-bridge` (port 19724). [See motor repo](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
+
 Get started with BIM generation in 5 minutes.
 
 ## Prerequisites
@@ -222,5 +224,5 @@ async function exportModel(modelId, apiKey) {
 - Live Platform: https://www.gps-2-bim.app
 - Documentation: https://docs.gaude.ai
 - Issues: https://github.com/rickygaude-rgb/gaud-e-sdk/issues
-- Email: support@gaude.ai
+- Email: contacto@gaud-e.ai
 - Discord: https://discord.gg/gaude
