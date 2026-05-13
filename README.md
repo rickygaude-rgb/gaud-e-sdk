@@ -7,6 +7,7 @@
 [![IFC Generation](https://img.shields.io/badge/IFC%20generation-~50ms-brightgreen)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
 [![Performance](https://img.shields.io/badge/vs%20Python-40x%20faster-orange)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
 [![Scientific Paper](https://img.shields.io/badge/📄_Scientific_Paper-2026-blueviolet?style=for-the-badge)](./paper/GAUD-E_Scientific_Paper_2026.pdf)
+[![Official Site](https://img.shields.io/badge/🌐_Official_Site-gps--2--bim.app-00d2ff?style=for-the-badge)](https://www.gps-2-bim.app/)
 
 **GAUD-E SDK** is a production-ready developer toolkit for integrating AI-powered BIM (Building Information Modeling) generation into your React applications. Generate complex architectural designs and building models from natural language prompts, visualize them in 3D, and export to industry-standard formats.
 
@@ -61,7 +62,7 @@ GAUD-E Platform — C++ Native Motor + 7-Agent AI Pipeline
 ```
 
 **C++ Motor Repository:** [github.com/rickygaude-rgb/C---Gps-2-Bim](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
-**Live Platform:** [https://gaud-e-gps2bim-web.vercel.app](https://gaud-e-gps2bim-web.vercel.app)
+**Live Platform:** [https://www.gps-2-bim.app/](https://www.gps-2-bim.app/) (production) · [https://gaud-e-gps2bim-web.vercel.app](https://gaud-e-gps2bim-web.vercel.app) (preview)
 
 **All AI processing happens on GAUD-E's secure cloud platform.** The SDK is a lightweight wrapper that routes requests through `api.gaude.ai`. The C++ motor runs locally for maximum performance—no round-trips for geometry computation.
 
