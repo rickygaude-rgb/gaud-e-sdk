@@ -6,12 +6,27 @@
 [![C++ Core](https://img.shields.io/badge/motor-C%2B%2B%2093%25-blue?logo=cplusplus)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
 [![IFC Generation](https://img.shields.io/badge/IFC%20generation-~50ms-brightgreen)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
 [![Performance](https://img.shields.io/badge/vs%20Python-40x%20faster-orange)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
+[![Scientific Paper](https://img.shields.io/badge/📄_Scientific_Paper-2026-blueviolet?style=for-the-badge)](./paper/GAUD-E_Scientific_Paper_2026.pdf)
 
 **GAUD-E SDK** is a production-ready developer toolkit for integrating AI-powered BIM (Building Information Modeling) generation into your React applications. Generate complex architectural designs and building models from natural language prompts, visualize them in 3D, and export to industry-standard formats.
 
 > **⚡ Powered by a native C++ motor (93% C++)** — IFC 2X3 generation in ~50ms, 40× faster than Python-based alternatives. The backend engine (`gaude-bridge`) runs as a local HTTP server on port 19724 and handles all geometry, IFC serialization, and CAD exports natively.
 
 > ⚠️ **License Change Notice (v2.0.1):** This project is no longer MIT. As of version 2.0.1, the GAUD-E SDK is licensed under the **Elastic License 2.0 (ELv2)**. You may use, modify, and distribute this software freely, but you **may not** offer it as a competing hosted/managed service. See [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md) for full details.
+
+---
+
+## 📄 Scientific Paper — Published Research
+
+> ### **GAUD-E: A Native C++ Architecture for Real-Time AI-Driven BIM Generation from Natural Language and Geospatial Inputs**
+>
+> Published research describing the 7-agent pipeline, C++ engine architecture (40× faster than Python-based alternatives), IFC 2X3 generation methodology, and validation against industry benchmarks.
+>
+> 📖 **Read the full paper:** [GAUD-E_Scientific_Paper_2026.pdf](./paper/GAUD-E_Scientific_Paper_2026.pdf)
+> 📊 **Highlights:** ~50ms IFC generation · 7 specialized AI agents · parallel execution in Phase 2 · multi-format export (IFC/Revit/Rhino/ArchiCAD)
+> 📧 **Author contact:** contacto@gaud-e.ai
+
+---
 
 ## Architecture
 
