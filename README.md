@@ -87,6 +87,64 @@ GAUD-E Platform — C++ Native Motor + 7-Agent AI Pipeline
 
 **All AI processing happens on GAUD-E's secure cloud platform.** The SDK is a lightweight wrapper that routes requests through `api.gaude.ai`. The C++ motor runs locally for maximum performance—no round-trips for geometry computation.
 
+## How It Works — From Address to Full Project, in Minutes
+
+GAUD-E is not just a "BIM generator." It's a complete design platform that turns your idea into a delivered project. Here is the end-to-end workflow:
+
+### 1. Anchor your project in the real world
+
+Enter an **address** or coordinates, then **draw the polygon** of your site directly on the **satellite map**. GAUD-E pulls real-world context automatically: terrain elevation, solar exposure, climate data, surrounding buildings, zoning rules, and utility access. No more designing in a vacuum — your project starts grounded in measured reality.
+
+### 2. Describe your idea — your way
+
+Feed the platform anything that helps it understand your vision:
+
+- **Natural-language prompts** — *"a three-story bioclimatic clinic with two surgery rooms and a green roof"*
+- **Reference files** — sketches, hand drawings, mood boards, PDFs of programmatic briefs, photos, existing CAD/DWG
+- **Project data** — square meters per room, materials palette, budget caps, normative constraints, client preferences
+- **Negative prompts** to steer the AI away from styles you don't want
+
+You stay in the language of design and intent. GAUD-E translates that into geometry, materials, and engineering.
+
+### 3. Connect to your tool of choice
+
+GAUD-E speaks the language of every major professional design suite via MCP bridges:
+
+| Software | What you get |
+|----------|--------------|
+| **Revit** | Native families and parameters, ready to schedule and document |
+| **ArchiCAD** | GDL objects + IFC import, full library integration |
+| **Rhino + Grasshopper** | Parametric definitions, live recompute, NURBS surfaces |
+| **SketchUp** | Editable components and groups, materials preserved |
+| **AutoCAD** | DWG plans, sections, elevations, layered and dimensioned |
+| **Vectorworks** | Native objects with metadata |
+
+One JSON BIM model — every authoring tool. Edit in your software, push back, keep iterating.
+
+### 4. Get everything a project needs — at once
+
+From a single generation run you receive a complete project deliverable set:
+
+- **2D drawings** — floor plans, sections, elevations, façades, urban context, technical details
+- **3D models** — IFC, glTF/GLB, photorealistic renders, navigable walkthroughs
+- **MEP systems** — sanitary, water, electrical, HVAC, gas, fire protection — sized and traced
+- **Structural calculations** — beam/column/foundation design, load analysis, calculation memorandum (NCh 433, ACI 318, Eurocódigo, ASCE 7)
+- **Energy & environmental analysis** — thermal performance, daylight, ventilation, U-values, carbon footprint, LEED / Passivhaus prechecks
+- **Quantity takeoffs & cost estimates** — itemized BOQ, unit prices, total CAPEX, S-curve cashflow
+- **Regulatory & permitting docs** — compliance checks against local urban codes (OGUC, plano regulador, IBC, etc.)
+
+### The GAUD-E Promise
+
+> **Master years of specialist software in minutes, by speaking design.**
+
+Revit, ArchiCAD, Rhino, Grasshopper, Civil 3D, AutoCAD — each tool normally takes a career to master. GAUD-E lets you **control them all** through real-world data and natural language. You bring the architectural vision; the platform handles the complex software manipulation for you.
+
+The result: a newcomer ships work that looks and behaves like the output of a senior professional with twenty years at the desk. An experienced architect ships **ten times faster**, with engineering, MEP, energy and budget already integrated and coordinated from the first iteration.
+
+**You stop fighting the tools. You start building ideas.**
+
+---
+
 ## Features
 
 - ⚡ **C++ Native Motor (93% C++)** — IFC 2X3 generation in ~50ms, 40× faster than Python (`gaude-bridge` on port 19724)
