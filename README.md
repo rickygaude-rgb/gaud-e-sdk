@@ -1,7 +1,7 @@
 # GAUD-E Developer SDK
 
-[![NPM Version](https://img.shields.io/npm/v/@gaude/sdk)](https://www.npmjs.com/package/@gaude/sdk)
-[![License: ELv2](https://img.shields.io/badge/License-Elastic%202.0-blue.svg)](./LICENSE)
+[![GitHub Packages](https://img.shields.io/badge/registry-GitHub_Packages-181717?logo=github)](https://github.com/rickygaude-rgb/gaud-e-sdk/pkgs/npm/gaud-e-sdk)
+[![License: Commercial](https://img.shields.io/badge/License-Commercial_Paid_Only-red.svg)](./LICENSE) [![No Modification](https://img.shields.io/badge/No-Modification-red)](./NOTICE.md)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/rickygaude-rgb/gaud-e-sdk/actions)
 [![C++ Core](https://img.shields.io/badge/motor-C%2B%2B%2093%25-blue?logo=cplusplus)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
 [![IFC Generation](https://img.shields.io/badge/IFC%20generation-~50ms-brightgreen)](https://github.com/rickygaude-rgb/C---Gps-2-Bim)
@@ -13,7 +13,7 @@
 
 > **⚡ Powered by a native C++ motor (93% C++)** — IFC 2X3 generation in ~50ms, 40× faster than Python-based alternatives. The backend engine (`gaude-bridge`) runs as a local HTTP server on port 19724 and handles all geometry, IFC serialization, and CAD exports natively.
 
-> ⚠️ **License Change Notice (v2.0.1):** This project is no longer MIT. As of version 2.0.1, the GAUD-E SDK is licensed under the **Elastic License 2.0 (ELv2)**. You may use, modify, and distribute this software freely, but you **may not** offer it as a competing hosted/managed service. See [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md) for full details.
+> ⚠️ **License Change Notice (v2.2.0 — May 2026):** This SDK is **no longer open source**. Licensed under the **GAUD-E Commercial License v1.0** (proprietary, paid-only). You may **NOT** use, copy, modify, or distribute without a signed paid commercial license from **contacto@gaud-e.ai**. PRs not accepted.
 
 ---
 
@@ -26,6 +26,27 @@
 > 📖 **Read the full paper:** [GAUD-E_Scientific_Paper_2026.pdf](./paper/GAUD-E_Scientific_Paper_2026.pdf)
 > 📊 **Highlights:** ~50ms IFC generation · 7 specialized AI agents · parallel execution in Phase 2 · multi-format export (IFC/Revit/Rhino/ArchiCAD)
 > 📧 **Author contact:** contacto@gaud-e.ai
+
+---
+
+## 📦 Installation — Paid License Required
+
+> ⚠️ **Signed commercial license required** before install/use.
+> Contact **contacto@gaud-e.ai** for pricing.
+
+The SDK is hosted on **GitHub Packages** (not NPM).
+
+```bash
+# Step 1: GitHub PAT with scope read:packages (github.com/settings/tokens/new)
+echo "//npm.pkg.github.com/:_authToken=YOUR_PAT" >> ~/.npmrc
+echo "@rickygaude-rgb:registry=https://npm.pkg.github.com" >> ~/.npmrc
+
+# Step 2: Install
+npm install @rickygaude-rgb/gaud-e-sdk
+
+# Step 3: Use
+# import { GaudeMapSelector, useGaude } from '@rickygaude-rgb/gaud-e-sdk'
+```
 
 ---
 
