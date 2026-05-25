@@ -25,7 +25,7 @@ from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_JUSTIFY, TA_RIGHT
 import os
 
 # ─── Output path ─────────────────────────────────────────────────────────────
-OUTPUT_PATH = "/sessions/ecstatic-dreamy-allen/mnt/C++/gaud-e-sdk/paper/GAUD-E_Scientific_Paper_2026.pdf"
+OUTPUT_PATH = "paper/GAUD-E_Scientific_Paper_2026.pdf"
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
 PAGE_WIDTH, PAGE_HEIGHT = letter
@@ -1046,6 +1046,257 @@ Platform live at <u>https://www.gps-2-bim.app</u> and <u>https://gaud-e.ai</u>.
 Open-source SDK: <u>https://github.com/rickygaude-rgb/gaud-e-sdk</u>.
 Enterprise: <u>contacto@gaud-e.ai</u>.
 """, body_style))
+
+
+# ════════════════════════════════════════════════════════════════════════════
+#  APPENDICES (v2.3 — May 2026): complement the paper without altering body
+# ════════════════════════════════════════════════════════════════════════════
+story.append(PageBreak())
+story.append(Paragraph("Appendix A — Multi-Language Stack", section_style))
+story.append(Paragraph("""
+While the GAUD-E motor is C++17, the platform is deliberately polyglot because each
+professional CAD/BIM ecosystem speaks its own language. The table below summarises every
+language layer added in v2.3 and the reason each is non-substitutable.
+""", body_style))
+
+lang_data = [
+    ["Layer",                       "Language",                       "Why"],
+    ["gaude-bridge motor (93%)",    "C++17",                          "~50 ms IFC, 40x vs Python"],
+    ["Revit add-in",                "C# / .NET 4.8",                  "RevitAPI.dll is managed-only"],
+    ["ArchiCAD add-on",             "C++ (DevKit v29.3100)",          "MDID 944139566/2142198165 signed binary"],
+    ["ArchiCAD geometry parts",     "GDL",                            "Library Parts: 2D + 3D + Parameters"],
+    ["Rhino plugin",                "Python (rhinoscriptsyntax)",     "Rhino.Compute & Hops preferred"],
+    ["Grasshopper component",       "C# (GH SDK)",                    "Native .gha components"],
+    ["AutoCAD ARX add-in",          "ObjectARX (C++)",                "C++-only for full 3D"],
+    ["AutoCAD scripts",             "AutoLISP",                       "Fast macros"],
+    ["SketchUp plugin",             "Ruby",                           "Native plugin language"],
+    ["Web SDK",                     "JS / TS + JSX (React 19)",       "Browser + Node 18+"],
+    ["IFC tooling",                 "Python (IfcOpenShell)",          "Schema introspection & repair"],
+    ["Installers",                  "PowerShell + Bash",              "Windows / macOS / Linux"],
+]
+lang_table = Table(lang_data, colWidths=[1.6*inch, 2.0*inch, 1.9*inch])
+lang_table.setStyle(TableStyle([
+    ('BACKGROUND', (0, 0), (-1, 0), BLUE_DARK),
+    ('TEXTCOLOR',  (0, 0), (-1, 0), colors.white),
+    ('FONTNAME',   (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('FONTSIZE',   (0, 0), (-1, -1), 8),
+    ('ALIGN',      (0, 0), (-1, -1), 'LEFT'),
+    ('VALIGN',     (0, 0), (-1, -1), 'TOP'),
+    ('GRID',       (0, 0), (-1, -1), 0.5, GRAY_MID),
+    ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, GRAY_LIGHT]),
+    ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+    ('TOPPADDING',    (0, 0), (-1, -1), 4),
+    ('LEFTPADDING',   (0, 0), (-1, -1), 5),
+]))
+story.append(lang_table)
+story.append(Spacer(1, 0.08 * inch))
+story.append(Paragraph("""
+The Web SDK does not expose these languages directly. It talks to the local C++ bridge
+(127.0.0.1:19724) and the bridge emits the language-specific artefact for each target:
+.cs + .addin for Revit, MDID-signed .apx for ArchiCAD, .py + .ghx for Rhino/Grasshopper,
+.arx + .lsp for AutoCAD, .rbz for SketchUp.
+""", body_style))
+
+# ── Appendix B — Skills ecosystem ───────────────────────────────────────────
+story.append(PageBreak())
+story.append(Paragraph("Appendix B — Skills Ecosystem (47 Claude Skills)", section_style))
+story.append(Paragraph("""
+v2.3 ships 47 specialised Claude Skills auto-registered by the desktop installer into
+Claude Code / Claude Desktop. Skills are loaded by the 7-agent pipeline on demand: the
+Enhancer consults urban / normative skills, the Architect queries the 3D-universe and
+realworld-geometry skills, the Reviewer runs the metric validator, etc. Each skill is a
+self-contained YAML + Markdown bundle following the Anthropic Skill spec.
+""", body_style))
+
+skill_data = [
+    ["Category",                                    "Count", "Examples"],
+    ["Core architectural (gaud-e-*)",               "20",    "architecture-engine, structural-engineer, mep-structures, normas-urbanismo"],
+    ["Geospatial (geosite-toolkit:*)",              "4",     "site-analysis, earth-engine-analyst, google-maps-expert, context-to-bim"],
+    ["Architecture & BIM (arq-bim-toolkit:*)",      "6",     "architecture-engine, structural-engineer, mep-structures, 3d-modeling-library"],
+    ["BIM developer (bim-dev-toolkit:*)",           "6",     "ifc-programming, 3d-web-dev, revit-api-expert, archicad-api-expert, mcp-bim-bridge"],
+    ["Productivity & output (Anthropic core)",      "11",    "pdf, docx, xlsx, pptx, canvas-design, mcp-builder, skill-creator"],
+]
+sk_table = Table(skill_data, colWidths=[2.5*inch, 0.6*inch, 2.9*inch])
+sk_table.setStyle(TableStyle([
+    ('BACKGROUND', (0, 0), (-1, 0), BLUE_MID),
+    ('TEXTCOLOR',  (0, 0), (-1, 0), colors.white),
+    ('FONTNAME',   (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('FONTSIZE',   (0, 0), (-1, -1), 8),
+    ('ALIGN',      (0, 0), (-1, -1), 'LEFT'),
+    ('VALIGN',     (0, 0), (-1, -1), 'TOP'),
+    ('GRID',       (0, 0), (-1, -1), 0.5, GRAY_MID),
+    ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, GRAY_LIGHT]),
+    ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+    ('TOPPADDING',    (0, 0), (-1, -1), 4),
+    ('LEFTPADDING',   (0, 0), (-1, -1), 5),
+]))
+story.append(sk_table)
+story.append(Spacer(1, 0.08 * inch))
+story.append(Paragraph("Skills routed per phase", sub_style))
+phase_skills = [
+    ["Phase / Agent",          "Primary skills consulted"],
+    ["1 - Enhancer",           "realworld-geometry, normas-urbanismo, site-analysis"],
+    ["1 - Architect",          "architecture-engine, 3d-universe, cad-bim-expert"],
+    ["2 - Structural",         "structural-engineer (gaud-e + arq-bim-toolkit)"],
+    ["2 - MEP",                "mep-structures (gaud-e + arq-bim-toolkit)"],
+    ["2 - Landscape",          "landscaping-expert, earth-engine-analyst"],
+    ["3 - Programmer",         "ifc-codegen-patterns, ifc-programming"],
+    ["4 - Reviewer",           "metric-validator, budget-estimator"],
+]
+ps_table = Table(phase_skills, colWidths=[1.9*inch, 4.1*inch])
+ps_table.setStyle(TableStyle([
+    ('BACKGROUND', (0, 0), (-1, 0), BLUE_DARK),
+    ('TEXTCOLOR',  (0, 0), (-1, 0), colors.white),
+    ('FONTNAME',   (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('FONTSIZE',   (0, 0), (-1, -1), 8),
+    ('ALIGN',      (0, 0), (-1, -1), 'LEFT'),
+    ('GRID',       (0, 0), (-1, -1), 0.5, GRAY_MID),
+    ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, GRAY_LIGHT]),
+    ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+    ('TOPPADDING',    (0, 0), (-1, -1), 4),
+    ('LEFTPADDING',   (0, 0), (-1, -1), 5),
+]))
+story.append(ps_table)
+
+# ── Appendix C — External resources ─────────────────────────────────────────
+story.append(PageBreak())
+story.append(Paragraph("Appendix C — External Resources and Datasets", section_style))
+story.append(Paragraph("""
+GAUD-E does not reason from scratch. Every generation cycle is grounded against
+millions of real 3D models, IFC samples and reference projects fetched on demand
+from curated open datasets. This appendix lists every external dataset and live
+data source the platform consults in v2.3.
+""", body_style))
+
+ds_data = [
+    ["Dataset",          "Count",              "License",      "Use"],
+    ["Objaverse-XL",     "10 M+ objects",      "CC-BY / mixed","Furniture, props, exterior assets"],
+    ["ShapeNet",         "3 M+ models",        "research",     "Chairs, lamps, electronics"],
+    ["3D-FRONT",         "18 K rooms",         "research",     "Furnished interior scenes"],
+    ["Structured3D",     "3 500 houses",       "research",     "Annotated floor plans"],
+    ["FurniScene",       "11 K rooms / 39 K",  "research",     "Furniture-in-context placement"],
+    ["ABC Dataset",      "1 M",                "MIT",          "Mechanical CAD reference"],
+    ["ModelNet40",       "12 K",               "research",     "Shape benchmark"],
+    ["PartNet",          "26 K",               "research",     "Part-level kit-of-parts"],
+    ["BIMData",          "100 IFC models",     "open",         "Real BIM references"],
+    ["buildingSMART",    "canonical samples",  "open",         "IFC 2X3 / IFC4 reference"],
+    ["OpenBIM",          "schemas + MVDs",     "open",         "Certification samples"],
+    ["Revit RST/RAC/RME","Autodesk samples",   "Autodesk EULA","Family / project templates"],
+    ["Archicad Samples", ".pln references",    "Graphisoft",   "Layout templates"],
+]
+ds_table = Table(ds_data, colWidths=[1.4*inch, 1.5*inch, 1.0*inch, 2.1*inch])
+ds_table.setStyle(TableStyle([
+    ('BACKGROUND', (0, 0), (-1, 0), BLUE_DARK),
+    ('TEXTCOLOR',  (0, 0), (-1, 0), colors.white),
+    ('FONTNAME',   (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('FONTSIZE',   (0, 0), (-1, -1), 7.5),
+    ('ALIGN',      (0, 0), (-1, -1), 'LEFT'),
+    ('VALIGN',     (0, 0), (-1, -1), 'TOP'),
+    ('GRID',       (0, 0), (-1, -1), 0.5, GRAY_MID),
+    ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, GRAY_LIGHT]),
+    ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+    ('TOPPADDING',    (0, 0), (-1, -1), 4),
+    ('LEFTPADDING',   (0, 0), (-1, -1), 5),
+]))
+story.append(ds_table)
+story.append(Spacer(1, 0.08 * inch))
+
+story.append(Paragraph("Geospatial sources (fetched live per project)", sub_style))
+story.append(Paragraph("""
+Google Maps JS API (address geocoding, site polygon), Google Street View Static API
+(site photos, neighbour facades), Google Earth Engine (Sentinel-2, Landsat 8/9, MODIS,
+SRTM DEM), Mapbox Terrain-DEM, OpenStreetMap (roads, plots, building footprints, POIs),
+Cadastral / SII (CL), EPW weather files for Ladybug / Honeybee energy analysis.
+""", body_style))
+
+story.append(Paragraph("Code / normative databases", sub_style))
+story.append(Paragraph("""
+OGUC + Planos Reguladores Comunales (Chile); NCh 433 / 430 / 427; IBC, ASCE 7, ACI 318,
+AISC 360 (US); Eurocódigos 0, 1, 2, 3, 5, 8 (EU); NFPA 13 / 72 (fire); ASHRAE 90.1 / 62.1
+(HVAC); NEC / IEC (electrical). All wrapped by the gaud-e-normas-urbanismo and
+gaud-e-structural-engineer skills.
+""", body_style))
+
+story.append(Paragraph("Caching policy", sub_style))
+story.append(Paragraph("""
+The desktop installer downloads ~2 GB of the most-used reference subsets on first launch
+(50 K curated Objaverse furniture, 200 canonical IFC samples, country-specific code pack
+selected at install time). Subsequent generations are offline-capable once the cache is
+warm.
+""", body_style))
+
+# ── Appendix D — Downloadable desktop version ───────────────────────────────
+story.append(PageBreak())
+story.append(Paragraph("Appendix D — Downloadable Desktop Version (Auto-Connect)", section_style))
+story.append(Paragraph("""
+v2.3 introduces a single downloadable installer (gaud-e-desktop-2.3.0-&lt;os&gt;-&lt;arch&gt;.zip)
+distributed via GitHub Releases. The installer wires GAUD-E into every professional
+CAD/BIM tool installed on the machine, automatically. No manual plugin copying, no IDs
+to enter, no Python venvs to build.
+""", body_style))
+
+story.append(Paragraph("Bundle contents", sub_style))
+story.append(Paragraph("""
+bin/ (gaude-bridge, gps2bim, gaude-pipeline, gaude-detect),
+connectors/ (revit, archicad, rhino, autocad, sketchup pre-signed),
+skills/ (47 Claude skills), examples/, install.ps1 / install.sh, LICENSE.
+""", body_style))
+
+story.append(Paragraph("Auto-detection matrix", sub_style))
+ac_data = [
+    ["Software",                    "Connector",                         "Auto-action"],
+    ["Autodesk Revit 2024+",        ".addin (C# / .NET 4.8)",            "Copy to %APPDATA%/Autodesk/Revit/Addins/2024/"],
+    ["Graphisoft ArchiCAD 27+",     "MDID-signed C++ add-on (.apx)",     "Copy to Add-Ons/Standard/"],
+    ["McNeel Rhino 7/8",            ".rhp + .gha component",             "Copy to %APPDATA%/McNeel/Rhinoceros/8.0/Plug-ins/"],
+    ["Autodesk AutoCAD 2024+",      ".arx ObjectARX + .lsp loader",      "Registered via appload"],
+    ["Trimble SketchUp Pro 2024+",  ".rbz Ruby plugin",                  "Auto-installed via Extension Manager"],
+]
+ac_table = Table(ac_data, colWidths=[1.7*inch, 2.0*inch, 2.3*inch])
+ac_table.setStyle(TableStyle([
+    ('BACKGROUND', (0, 0), (-1, 0), BLUE_DARK),
+    ('TEXTCOLOR',  (0, 0), (-1, 0), colors.white),
+    ('FONTNAME',   (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('FONTSIZE',   (0, 0), (-1, -1), 7.5),
+    ('ALIGN',      (0, 0), (-1, -1), 'LEFT'),
+    ('VALIGN',     (0, 0), (-1, -1), 'TOP'),
+    ('GRID',       (0, 0), (-1, -1), 0.5, GRAY_MID),
+    ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, GRAY_LIGHT]),
+    ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+    ('TOPPADDING',    (0, 0), (-1, -1), 4),
+    ('LEFTPADDING',   (0, 0), (-1, -1), 5),
+]))
+story.append(ac_table)
+story.append(Spacer(1, 0.08 * inch))
+
+story.append(Paragraph("Service registration", sub_style))
+story.append(Paragraph("""
+gaude-bridge is registered as a system service (launchd on macOS, systemd on Linux,
+Windows Service on Windows) so port 127.0.0.1:19724 is always available. The bridge
+self-updates via 'gaude-bridge --self-update', pulling the latest release from
+github.com/rickygaude-rgb/gaud-e-sdk/releases/latest and replacing all binaries in
+place; the running service is restarted gracefully.
+""", body_style))
+
+story.append(Paragraph("Verification", sub_style))
+verify_code = """curl http://127.0.0.1:19724/health
+# {"status":"ok","motor":"gaude-bridge","version":"2.3.0",
+#  "language":"C++","connectors":["revit","archicad","rhino","autocad","sketchup"]}
+
+gaude-detect list
+# revit       2024.3   addin installed  OK
+# archicad    27.4001  addon installed  OK
+# rhino       8.5      plugin installed OK"""
+story.append(Paragraph(verify_code, code_style))
+
+story.append(Paragraph("Commercial licence and contact", sub_style))
+story.append(Paragraph("""
+The desktop installer requires a paid commercial licence. Contact:
+<u>contacto@gaud-e.ai</u> | <u>https://www.gps-2-bim.app</u> |
+SDK: <u>https://github.com/rickygaude-rgb/gaud-e-sdk</u> |
+Motor: <u>https://github.com/rickygaude-rgb/C---Gps-2-Bim</u> |
+Author: Ricardo Riffo Q. (<u>rickygaude@gmail.com</u>).
+""", body_style))
+
 
 # ─── References ───────────────────────────────────────────────────────────────
 story.append(PageBreak())

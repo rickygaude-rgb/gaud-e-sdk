@@ -17,6 +17,39 @@
 
 ---
 
+
+---
+
+## What's new in v2.3.0 (May 2026)
+
+The SDK is now distributed as a **complete desktop ecosystem** in addition to the npm package. Four new docs ship with v2.3:
+
+| Doc | What it covers |
+|---|---|
+| [docs/LANGUAGES.md](./docs/LANGUAGES.md) | The polyglot stack: C++17 motor, C# .NET (Revit), GDL + C++ (ArchiCAD), Python + C# (Rhino/Grasshopper), AutoLISP + ObjectARX (AutoCAD), Ruby (SketchUp), JS/TS (Web) |
+| [docs/SKILLS.md](./docs/SKILLS.md) | All **47 Claude skills** bundled with the desktop installer (gaud-e-*, geosite-toolkit:*, arq-bim-toolkit:*, bim-dev-toolkit:*) |
+| [docs/EXTERNAL_RESOURCES.md](./docs/EXTERNAL_RESOURCES.md) | Datasets the platform grounds against: Objaverse-XL (10 M+), ShapeNet, 3D-FRONT, BIMData, buildingSMART, OpenBIM, plus geospatial sources and code databases |
+| [docs/DESKTOP_INSTALLER.md](./docs/DESKTOP_INSTALLER.md) | One-click downloadable installer that **auto-detects** Revit, ArchiCAD, Rhino, AutoCAD and SketchUp and wires the matching connector without user action |
+
+### Quick install (downloadable desktop version)
+
+**Windows:**
+```powershell
+Invoke-WebRequest -Uri https://github.com/rickygaude-rgb/gaud-e-sdk/releases/latest/download/gaud-e-desktop-windows-x64.zip -OutFile $env:TEMP\gaude.zip
+Expand-Archive $env:TEMP\gaude.zip -DestinationPath $env:TEMP\gaude -Force
+& "$env:TEMP\gaude\install.ps1"
+```
+
+**macOS / Linux:**
+```bash
+curl -L -o /tmp/gaude.zip https://github.com/rickygaude-rgb/gaud-e-sdk/releases/latest/download/gaud-e-desktop-macos-arm64.zip
+unzip /tmp/gaude.zip -d /tmp/gaude && /tmp/gaude/install.sh
+```
+
+The installer registers `gaude-bridge` as a system service on port **19724**, copies pre-signed connectors into every CAD/BIM host found on the machine, and installs the 47 Claude skills into `~/.claude/skills/`. No further configuration required.
+
+See [docs/DESKTOP_INSTALLER.md](./docs/DESKTOP_INSTALLER.md) for the full bundle layout, configuration, and uninstall instructions.
+
 ## 📄 Scientific Paper — Published Research
 
 > ### **GAUD-E: A Native C++ Architecture for Real-Time AI-Driven BIM Generation from Natural Language and Geospatial Inputs**

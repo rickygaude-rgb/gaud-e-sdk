@@ -559,3 +559,36 @@ All AI processing is **secure and centralized** on the GAUD-E Platform—the SDK
 **Total Project Size:** ~150 KB (minified)
 
 Ready for immediate production use or integration into existing React applications.
+
+
+---
+
+## v2.3.0 Additions (May 2026)
+
+### New documentation files
+- `docs/LANGUAGES.md` — multi-language polyglot stack (C++17 / C# / GDL / Python / Ruby / JS-TS / LISP)
+- `docs/SKILLS.md` — 47-skill catalogue + per-phase routing
+- `docs/EXTERNAL_RESOURCES.md` — Objaverse-XL, ShapeNet, 3D-FRONT, BIMData, buildingSMART,
+  Earth Engine, OSM, EPW, OGUC/IBC/Eurocódigos/NFPA/ASHRAE
+- `docs/DESKTOP_INSTALLER.md` — downloadable desktop version with auto-connect to Revit /
+  ArchiCAD / Rhino / AutoCAD / SketchUp
+- `CHANGELOG.md` — formal Keep-a-Changelog history
+
+### New release assets (GitHub Releases)
+- `gaud-e-sdk-2.3.0.tgz` — npm package
+- `gaud-e-desktop-2.3.0-windows-x64.zip` — Windows installer bundle (binaries + 47 skills + connectors)
+- `gaud-e-desktop-2.3.0-macos-arm64.zip` — macOS Apple Silicon installer bundle
+- `gaud-e-desktop-2.3.0-linux-x64.zip` — Linux x64 installer bundle
+- `gaud-e-skills-2.3.0.zip` — standalone skills bundle (47 Claude skills)
+- `GAUD-E_Scientific_Paper_2026.pdf` — v2.3 paper with Appendices A-D
+
+### Paper extension
+- Sections 1-12 of the paper are kept identical to v2.2.
+- Four new appendices appended before References:
+  - **Appendix A** — Multi-Language Stack
+  - **Appendix B** — Skills Ecosystem (47 Claude Skills)
+  - **Appendix C** — External Resources and Datasets
+  - **Appendix D** — Downloadable Desktop Version (Auto-Connect)
+- All emails and URLs preserved: contacto@gaud-e.ai, rickygaude@gmail.com,
+  https://www.gps-2-bim.app, https://gaud-e.ai,
+  https://github.com/rickygaude-rgb/gaud-e-sdk, https://github.com/rickygaude-rgb/C---Gps-2-Bim.

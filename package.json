@@ -1,7 +1,7 @@
 {
   "name": "@rickygaude-rgb/gaud-e-sdk",
-  "version": "2.2.0",
-  "description": "GAUD-E Developer SDK — Proprietary commercial SDK for AI-powered BIM generation. 7-Agent Pipeline + C++ native engine + native IFC 2X3 export. Paid license required.",
+  "version": "2.3.0",
+  "description": "GAUD-E Developer SDK v2.3 - 7-agent C++ native pipeline + 47 Claude skills + auto-installer for Revit/ArchiCAD/Rhino/AutoCAD/SketchUp. Paid commercial license.",
   "type": "module",
   "main": "src/index.js",
   "module": "src/index.js",
@@ -11,7 +11,15 @@
       "default": "./src/index.js"
     }
   },
-  "files": ["src", "docs", "README.md", "LICENSE", "NOTICE.md"],
+  "files": [
+    "src",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "NOTICE.md",
+    "CHANGELOG.md",
+    "paper"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -43,7 +51,16 @@
     "react-dom": "^18.0.0 || ^19.0.0",
     "three": ">=0.150.0"
   },
-  "keywords": ["gaud-e","bim","architecture","ifc","ai-generation","proprietary","commercial-license","paid-only"],
+  "keywords": [
+    "gaud-e",
+    "bim",
+    "architecture",
+    "ifc",
+    "ai-generation",
+    "proprietary",
+    "commercial-license",
+    "paid-only"
+  ],
   "author": {
     "name": "GAUD-E Architect AI",
     "email": "contacto@gaud-e.ai",
@@ -54,7 +71,12 @@
     "registry": "https://npm.pkg.github.com",
     "access": "restricted"
   },
-  "repository": { "type": "git", "url": "git+https://github.com/rickygaude-rgb/gaud-e-sdk.git" },
-  "bugs": { "email": "contacto@gaud-e.ai" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickygaude-rgb/gaud-e-sdk.git"
+  },
+  "bugs": {
+    "email": "contacto@gaud-e.ai"
+  },
   "homepage": "https://www.gps-2-bim.app/"
 }
