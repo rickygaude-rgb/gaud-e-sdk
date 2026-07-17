@@ -14,6 +14,7 @@
 > **⚡ Powered by a native C++ motor (93% C++)** — IFC 2X3 generation in ~50ms, 40× faster than Python-based alternatives. The backend engine (`gaude-bridge`) runs as a local HTTP server on port 19724 and handles all geometry, IFC serialization, and CAD exports natively.
 
 > ⚠️ **License Change Notice (v2.2.0 — May 2026):** This SDK is **no longer open source**. Licensed under the **GAUD-E Commercial License v1.0** (proprietary, paid-only). You may **NOT** use, copy, modify, or distribute without a signed paid commercial license from **contacto@gaud-e.ai**. PRs not accepted.
+> https://drive.google.com/file/d/1vJYoUzfzrsV1-s2htsX7_ZSQqB21_J_S/view?usp=sharing
 
 ---
 
