@@ -272,6 +272,8 @@ export default App;
 ```
 
 ## API Usage Examples
+<img width="1854" height="997" alt="Captura de pantalla 2026-06-30 231722" src="https://github.com/user-attachments/assets/b13ca8d4-71b3-4445-8c9c-301448fe9e99" />
+
 
 ### Generate BIM Model
 
