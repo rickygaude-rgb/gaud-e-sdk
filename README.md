@@ -275,6 +275,7 @@ export default App;
 ## API Usage Examples
 https://drive.google.com/file/d/1vJYoUzfzrsV1-s2htsX7_ZSQqB21_J_S/view?usp=sharing<img width="1089" height="615" alt="image" src="https://github.com/user-attachments/assets/fd31b93c-77dd-41e1-88d7-24b33a90e675" />
 
+<img width="1723" height="903" alt="Captura de pantalla 2026-06-30 230008" src="https://github.com/user-attachments/assets/51869718-deef-40e3-8e11-0506275057c4" />
 
 <img width="1854" height="997" alt="Captura de pantalla 2026-06-30 231722" src="https://github.com/user-attachments/assets/b13ca8d4-71b3-4445-8c9c-301448fe9e99" />
 
