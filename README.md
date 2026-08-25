@@ -279,6 +279,8 @@ https://drive.google.com/file/d/1vJYoUzfzrsV1-s2htsX7_ZSQqB21_J_S/view?usp=shari
 
 <img width="1854" height="997" alt="Captura de pantalla 2026-06-30 231722" src="https://github.com/user-attachments/assets/b13ca8d4-71b3-4445-8c9c-301448fe9e99" />
 
+<img width="1434" height="668" alt="Captura de pantalla 2026-08-25 193625" src="https://github.com/user-attachments/assets/b14f6227-b746-43b9-a3b4-30b60d9025c1" />
+
 
 ### Generate BIM Model
 
