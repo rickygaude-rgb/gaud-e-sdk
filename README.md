@@ -279,6 +279,12 @@ https://drive.google.com/file/d/1vJYoUzfzrsV1-s2htsX7_ZSQqB21_J_S/view?usp=shari
 
 <img width="1341" height="640" alt="Captura de pantalla 2026-08-25 195031" src="https://github.com/user-attachments/assets/add86252-d494-4389-b110-9aefbbb2e48b" />
 
+<img width="1351" height="630" alt="image" src="https://github.com/user-attachments/assets/ca82917c-e2cb-4194-8f8c-08efec76f84a" />
+
+<img width="1353" height="618" alt="Captura de pantalla 2026-08-25 200343" src="https://github.com/user-attachments/assets/e63de958-664b-408c-bfa0-4c85c526f1a3" />
+
+<img width="1307" height="710" alt="Captura de pantalla 2026-08-25 200656" src="https://github.com/user-attachments/assets/6d2f8c1c-ceac-4bc6-a1e1-f3d444337a29" />
+
 
 ### Generate BIM Model
 
